@@ -10,8 +10,7 @@ Born from busted endpoints, cursed telemetry, and support cases that broke both 
 
 - Internal wikis no one reads  
 - Documentation review queues that move slower than a OneDrive sync on hotel Wi-Fi  
-- Governance models cooked up by developer teams where 80% have never spoken to a customer in their lives, and the other 20% haven’t done so since Internet Explorer had fans, not just support for legacy plugins.
-Models designed in echo chambers, tested in lab conditions, and dumped on frontline engineers like flaming garbage bags—with a smile.
+- Governance models cooked up by developer teams where 80% have never spoken to a customer in their lives, and the other 20% haven’t done so since Internet Explorer had a fan base. Models designed in echo chambers, tested in lab conditions, and dumped on frontline engineers like flaming garbage bags—with a smile.
 - Formatting rules designed more for Copilot than for humans  
 - And the soul-crushing experience of watching great knowledge die in private chats
 
