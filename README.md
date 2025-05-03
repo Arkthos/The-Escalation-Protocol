@@ -10,8 +10,9 @@ Born from busted endpoints, cursed telemetry, and support cases that broke both 
 
 - Internal wikis no one reads  
 - Documentation review queues that move slower than a OneDrive sync on hotel Wi-Fi  
-- Governance models cooked up by developer teams where 80% have never spoken to a customer in their lives, and the other 20% haven’t done so since Internet Explorer had a fan base. Models designed in echo chambers, tested in lab conditions, and dumped on frontline engineers like flaming garbage bags—with a smile.
-- Formatting rules designed more for Copilot than for humans  
+- Governance models cooked up by developer teams where 80% have never spoken to a customer in their lives, and the other 20% haven’t done so since Internet Explorer had a fan base.
+- Models summoned by sacrificing the blood and broken dreams of the guy who said “Customer Obsession is at the core of our culture” — crafted in echo chambers, tested in sterile lab conditions, then dumped on frontline engineers like flaming garbage bags—with a smile.
+- Formatting rules written for Copilot’s metadata cravings, not the human bleeding at 2AM to help the customer paying for Copilot’s existence. Because it's not about clarity, or sanity—it’s about compliance with the machine.  
 - And the soul-crushing experience of watching great knowledge die in private chats
 
 If you’ve ever spent hours solving a problem only to realize that *no one else will ever see that fix*—I built this for you.
