@@ -35,7 +35,7 @@ If the system won't let me share knowledge the right way, I’ll do it my way.
 Messy. Honest. Fast. Human.
 This is my initiative. My protest. My contribution.  
 
-So I built this place.  
+Long story short I built this place.  
 To fight that decay.  
 To make knowledge **accessible**, **findable**, **actionable**, and **human** again.
 
