@@ -12,7 +12,7 @@ Born from busted endpoints, cursed telemetry, and support cases that broke both 
 - Documentation review queues that move slower than a OneDrive sync on hotel Wi-Fi  
 - Governance models cooked up by developer teams where 80% have never spoken to a customer in their lives, and the other 20% haven’t done so since Internet Explorer had a fan base.
 - Models summoned by sacrificing the blood and broken dreams of the guy who said “Customer Obsession is at the core of our culture” — crafted in echo chambers, tested in sterile lab conditions, then dumped on frontline engineers like flaming garbage bags—with a smile.
-- Formatting rules written for Copilot’s metadata cravings, not the human bleeding at 2AM to help the customer paying for Copilot’s existence. Because it's not about clarity, or sanity—it’s about compliance with the machine.  
+- Formatting rules written for Copilot’s cravings, not the human bleeding at 2AM to help the customer paying for Copilot’s existence. Because it's not about clarity, or sanity—it’s about compliance with the machine.  
 - And the soul-crushing experience of watching great knowledge die in private chats
 
 If you’ve ever spent hours solving a problem only to realize that *no one else will ever see that fix*—I built this for you.
@@ -29,7 +29,7 @@ But in my org, it doesn't. Because now it’s all about formatting for ingestion
 
 > Shareability, clarity, and actual actionability were never the framework.  
 > They were the exception—for people like me, who put in the elbow grease.  
-> And now even that option is gone, buried under Copilot’s hunger for perfectly structured metadata.
+> And now even that option is gone, buried under the bot’s hunger for perfectly structured metadata.
 
 So I said screw it.  
 If the system won't let me share knowledge the right way, I’ll do it my way.  
