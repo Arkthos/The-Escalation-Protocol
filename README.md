@@ -116,7 +116,7 @@ It’s **OURS.** - *(but mostly mine)*
 Feel like complaining? Here’s your three-step protocol:
 
 **Step 1**: Call AT&T.  
-**Step 2**: Yell at that poor, overworked, underpaid outsourced soul who’s just trying to survive off a job that eats his soul twelve hours a day while being blamed for things way above his pay grade by people like you without a choice for a better life, because the politicians in his country stole even the nails holding the chairs to the floor.  (Yes, I have been that guy too).  
+**Step 2**: Scream at the poor bastard on the other end of the line—the overworked, underpaid, outsourced soul clawing through a 12-hour shift in a flickering fluorescent-lit hellscape. The guy who has to smile while getting chewed out for problems way above his pay grade by people like you, who think they have it rough just because they never bothered to learn what prorating means. He’s armed with nothing but a half-broken headset, a system that crashes twice an hour, and a script written by someone who’s never taken a call—or a punch to the gut—from a customer in their life. The guy who hasn’t seen sunlight in weeks, whose metrics punish him for empathy, and whose only crime was being born into needing a job to eat. He can’t quit. Can’t complain. Can’t even hope. Because the politicians back home didn’t just rob the coffers—they looted the screws holding the office chairs together. (Yeah. I’ve been that guy too)
 **Step 3**: When you feel like being human again come back and let´s make shit happen.
 
 
