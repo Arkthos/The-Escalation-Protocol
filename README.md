@@ -24,8 +24,8 @@ If you’ve ever spent hours solving a problem only to realize that *no one else
 Because knowledge should be sacred.  
 In support, it should be **the currency**, right after customer obsession.
 
-Every interaction, every ticket, every hair-pulling investigation—should feed the knowledge base.  
-But in my org, it doesn't. Because now it’s all about formatting for ingestion, not usefulness.
+Every interaction, every ticket, every hair-pulling investigation—should be treated as an oportunity to generate new knowledged, improve the exisitng and share it.  
+Nowadays it seems to be all about formatting for ingestion, not usefulness.
 
 > Shareability, clarity, and actual actionability were never the framework.  
 > They were the exception—for people like me, who put in the elbow grease.  
