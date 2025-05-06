@@ -66,7 +66,7 @@ and don’t immediately ask for my head.
 
 ## 🧭 How to Use This Repo
 
-- Start in the folders: `troubleshooting/`, `scripts/`, `detection-logic/`
+- Start in the Wiki adn then ise the reoruces provided in the folders: `troubleshooting/`, `scripts/`, ...
 - Read the comments. The gold is in the context.
 - **Never deploy blindly.** This is a map, not GPS.
 - Contribute if you’ve got something to share. This isn’t just a rant—it’s a revolution.
