@@ -1,4 +1,4 @@
-#The Escalation Protocol
+# The Escalation Protocol
 
 ### _For those who fix first, document second, and answer to no one but uptime._
 
