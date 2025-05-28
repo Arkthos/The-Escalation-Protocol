@@ -10,11 +10,8 @@ def prompt_input(prompt_text, required=True, cast=str, tip=None):
         user_input = input(f"{prompt_text.strip()} ").strip()
         if not user_input and not required:
             return None
-        if prompt_yes_no("Would you like to preview the generated policy before saving?"):
-        print("\n📄 Policy Preview:")
-        print(json.dumps(policy, indent=2))
 
-
+        try:
             return cast(user_input)
         except ValueError:
             print("❗ Invalid input type. Please try again.")
@@ -40,11 +37,7 @@ def prompt_multiselect(prompt_text, choices, tip=None):
     print("Enter numbers separated by commas (e.g., 1,3):")
     while True:
         selection = input("Your choices: ").strip().split(",")
-        if prompt_yes_no("Would you like to preview the generated policy before saving?"):
-        print("\n📄 Policy Preview:")
-        print(json.dumps(policy, indent=2))
-
-
+        try:
             result = [choices[int(s.strip()) - 1] for s in selection if s.strip().isdigit()]
             if result:
                 return result
@@ -182,7 +175,7 @@ def main():
         print("\n📄 Policy Preview:")
         print(json.dumps(policy, indent=2))
 
-
+    try:    
         desktop_path = Path.home() / "Desktop" / "device_control_policy.json"
         with open(desktop_path, "w") as f:
             json.dump(policy, f, indent=2)
