@@ -1,9 +1,8 @@
 import os
 import yaml
-import subprocess
 
 DOCS_DIR = "docs"
-IGNORE_DIRS = {"stylesheets", "__pycache__"}
+IGNORE_DIRS = {"stylesheets", "__pycache__","images"}
 IGNORE_FILES = {"_Sidebar.md", "index.md"}
 
 def collect_docs(path):
@@ -33,23 +32,10 @@ def build_mkdocs_config(nav):
 
     print("✅ Navigation updated in mkdocs.yml")
 
-def git_commit_and_push():
-    os.system("git add .")
-    status = os.popen("git status --porcelain").read()
-    if status.strip():
-        os.system("git commit -m '📚 Auto-update nav and deploy to GitHub Pages'")
-        os.system("git push origin main")
-        print("🚀 Changes committed and pushed to GitHub.")
-    else:
-        print("✅ No git changes to commit.")
-
 if __name__ == "__main__":
-    print("🔍 Scanning docs folder...")
     nav = collect_docs(DOCS_DIR)
     build_mkdocs_config(nav)
-
-    print("🚧 Deploying with mkdocs...")
-    os.system("mkdocs gh-deploy")
-
-    print("📦 Committing to GitHub...")
-    git_commit_and_push()
+    os.system("mkdocs build")
+    os.system("git add .")
+    os.system('git commit -m "Auto-update nav and build site"')
+    os.system("git push origin main")

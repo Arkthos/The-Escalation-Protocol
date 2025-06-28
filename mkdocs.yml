@@ -1,11 +1,12 @@
 site_name: The Escalation Protocol
 theme:
-  name: material
+  name: readthedocs
   features:
   - navigation.sections
-  - navigation.tracking
+  - toc.follow
 extra_css:
 - stylesheets/nav.css
+- stylesheets/layout.css
 nav:
 - Home: index.md
 - Defender for Endpoint:

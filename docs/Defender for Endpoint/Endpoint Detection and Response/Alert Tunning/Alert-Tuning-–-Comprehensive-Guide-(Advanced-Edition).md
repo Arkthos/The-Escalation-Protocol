@@ -20,27 +20,27 @@ A well-structured rule must align with how Defender evaluates alerts. Here are t
 ### 🛠 2.1 Key Elements
 
 - **Alert**: A signal triggered by Defender, carrying metadata such as AlertDisplayName, DetectionSource, and a list of Evidence items.  
-  ![EICAR test file malware alert was prevented by Microsoft Defender; alert is resolved.](https://github.com/Arkthos/The-Escalation-Protocol/blob/main/Wiki%20snapshots/Image%20%281%29.png)
+  ![EICAR test file malware alert was prevented by Microsoft Defender; alert is resolved.](../../../../Wiki snapshots/Image%20%281%29.png)
 
 - **Evidence / IOC**: Entities that cause the alert—files, IPs, users, devices, etc.  
-  ![Screenshot showing malware detection details for a file named 'X5O!...EICAR...'](https://github.com/Arkthos/The-Escalation-Protocol/blob/main/Wiki%20snapshots/Image%20%282%29.png)
+  ![Screenshot showing malware detection details for a file named 'X5O!...EICAR...'](../../../../Wiki snapshots/Image%20%282%29.png)
 
 - **Property**: Describes an attribute of the evidence, like ProcessName, DeviceTag, or SHA1.  
-  ![Malware detection details of EICAR test file including SHA1 hash, file path, and unsigned signer.](https://github.com/Arkthos/The-Escalation-Protocol/blob/main/Wiki%20snapshots/Image%20%283%29.png)
+  ![Malware detection details of EICAR test file including SHA1 hash, file path, and unsigned signer.](../../../../Wiki snapshots/Image%20%283%29.png)
 
 - **Condition**: A filter built with Evidence + Property + Operator + Value, forming the logic behind every rule.  
-  ![Screenshot of a conditions panel from a security alert filtering interface.](https://github.com/Arkthos/The-Escalation-Protocol/blob/main/Wiki%20snapshots/Image%20%284%29.png)
+  ![Screenshot of a conditions panel from a security alert filtering interface.](../../../../Wiki snapshots/Image%20%284%29.png)
 
 - **Group/Sub-group**: Containers to structure AND/OR logic. Sub-groups allow nesting for more granular logic.  
-  ![Screenshot of a security rule configuration interface showing grouped conditions.](https://github.com/Arkthos/The-Escalation-Protocol/blob/main/Wiki%20snapshots/Image%20%285%29.png)
+  ![Screenshot of a security rule configuration interface showing grouped conditions.](../../../../Wiki snapshots/Image%20%285%29.png)
 
 - **Service Source**: The Defender product where the alert originated (e.g., Defender for Endpoint, Defender for Office 365, Identity, etc.).  
-  ![A screenshot of an XDR alert highlighting the service source of the alert](https://github.com/Arkthos/The-Escalation-Protocol/blob/main/Wiki%20snapshots/Image%20%286%29.png)
+  ![A screenshot of an XDR alert highlighting the service source of the alert](../../../../Wiki snapshots/Image%20%286%29.png)
 
 - **Action**:  
   - **Resolve**: Keeps alert visible but closed  
   - **Hide**: Fully suppresses alert from queues and dashboards  
-  ![Screenshot from a security alert rule configuration interface showing action options.](https://github.com/Arkthos/The-Escalation-Protocol/blob/main/Wiki%20snapshots/Image%20%287%29.png)
+  ![Screenshot from a security alert rule configuration interface showing action options.](../../../../Wiki snapshots/Image%20%287%29.png)
 
 
 ### 🧮 2.2 Evaluation Order
@@ -54,7 +54,7 @@ Defender evaluates logic like a code compiler:
 
 ### ❗ 2.3 Logic Examples
 Alert tuning logic works much like a mathematical truth function based on Boolean logic.
-![Mathematical representation of the rule evaluation logic](https://github.com/Arkthos/The-Escalation-Protocol/blob/main/Wiki%20snapshots/Image%20(8).png)
+![Mathematical representation of the rule evaluation logic](../../../../Wiki snapshots/Image%20(8).png)
 
 We could also see it as:
 ```
@@ -80,7 +80,7 @@ else:
 This logic ensures precision in alert suppression—only known-safe patterns get filtered, and all other cases stay visible for review.
 
 #### Let’s see it in action:
-![Graphic representation of alert tuning logic using nested logical groups. A parent group with an AND operator contains two sub-groups (also using AND logic). Sub-group 1 specifies FileName = EICAR-Test-File and SHA1 = 4206473fa51738e6d713b28fbb6dc28193a1d851. Sub-group 2 specifies FolderPath = C:\Users\adminboy\Desktop and DetectionSource = Antivirus. All conditions must be met for the alert rule to trigger.](https://github.com/Arkthos/The-Escalation-Protocol/blob/main/Wiki%20snapshots/Image%20(9).png)
+![Graphic representation of alert tuning logic using nested logical groups. A parent group with an AND operator contains two sub-groups (also using AND logic). Sub-group 1 specifies FileName = EICAR-Test-File and SHA1 = 4206473fa51738e6d713b28fbb6dc28193a1d851. Sub-group 2 specifies FolderPath = C:\Users\adminboy\Desktop and DetectionSource = Antivirus. All conditions must be met for the alert rule to trigger.](../../../../Wiki snapshots/Image%20(9).png)
 
 This rule has:
 
@@ -179,7 +179,7 @@ The alert tuning rule lifecycle follows a structured path to ensure accuracy, sa
 - If rule is no longer needed (e.g., tool decommissioned), deactivate or delete
 
 📌 At any stage, if behavior changes or false positives emerge, loop back to “Build & Resolve” for refinement.
-![Flowchrt describing the life cycle states of a tuning rule](https://github.com/Arkthos/The-Escalation-Protocol/blob/main/Wiki%20snapshots/Image%20(10).png)
+![Flowchrt describing the life cycle states of a tuning rule](../../../../Wiki snapshots/Image%20(10).png)
 
 ## 🧭 6. Real-World Logic Patterns
 
@@ -211,7 +211,7 @@ However, this enriched data is not supported in Alert Tuning. The reason is:
 - This helps avoid suppression rules based on fields that will never match.
 - Always validate additional conditions manually by comparing with a raw alert sample.
 
-![A screenshot Showing the location of the auto-fill feature in alert tunning.](https://github.com/Arkthos/The-Escalation-Protocol/blob/main/Wiki%20snapshots/Image%20(11).png)
+![A screenshot Showing the location of the auto-fill feature in alert tunning.](../../../../Wiki snapshots/Image%20(11).png)
 
 🌱 **Contextual Suppression — Future Direction**: While not currently available, there is a long-term vision to support contextual suppression. This would allow:
 

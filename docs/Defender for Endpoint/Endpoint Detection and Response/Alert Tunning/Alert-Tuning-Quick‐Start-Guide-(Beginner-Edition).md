@@ -10,7 +10,7 @@ Before configuring alert tuning, it’s essential to locate where the tuning opt
    -  **Create a rule from scratch**, defining all criteria manually.
    -  **Create a rule based on an existing alert**, which pre-populates some settings. This option is also available from within an alert's detail page under **Incidents & Alerts ▶ Alerts**.
 
-![Screenshot of the Microsoft Defender XDR portal illustrating the navigation path to the Alert tuning blade:](https://github.com/Arkthos/The-Escalation-Protocol/blob/main/Wiki%20snapshots/alert%20page.png)
+![Screenshot of the Microsoft Defender XDR portal illustrating the navigation path to the Alert tuning blade:](../../../Wiki snapshots/alert page.png)
 
 > 📌 **Tip:** If the “Alert Tuning” option isn’t visible, it usually means your account lacks the necessary permissions or licensing.
 
@@ -93,7 +93,7 @@ Let’s walk through a real-world example. Suppose your team runs a trusted admi
    - Go to **Settings ▶ Alert Tuning ▶ Associated Alerts**  
    - Confirm that only expected alerts are being resolved  
 6. If everything looks good, return to the rule and change the `Action = Hide` to clean up the dashboard.
-![Flowchart showing the general “create and validate an alert-tuning rule” process:  Start at a blue box: “Open the alert you want to tune.”  Downward arrow to “Tune alert wizard – choose alert scope.”  Arrow to “Click Auto-fill rule conditions.”  Arrow to “Review / adjust evidence & operators.”  Arrow to “Save rule with Action = Resolve.”  Arrow to “Monitor ‘Associated alerts’ for 7-14 days.”  Arrow to a diamond decision: “Unexpected alerts or false negatives?”  Yes branch leads to “Refine conditions, scope, or groups,” which loops back to the save-rule step.  No branch leads to “Edit rule → switch Action to Hide,” completing the loop.  The diagram emphasizes an iterative cycle: pilot in Resolve, monitor, refine if needed, then promote the rule to Hide once confident.](https://github.com/Arkthos/The-Escalation-Protocol/blob/main/Wiki%20snapshots/Image.png)
+![Flowchart showing the general “create and validate an alert-tuning rule” process:  Start at a blue box: “Open the alert you want to tune.”  Downward arrow to “Tune alert wizard – choose alert scope.”  Arrow to “Click Auto-fill rule conditions.”  Arrow to “Review / adjust evidence & operators.”  Arrow to “Save rule with Action = Resolve.”  Arrow to “Monitor ‘Associated alerts’ for 7-14 days.”  Arrow to a diamond decision: “Unexpected alerts or false negatives?”  Yes branch leads to “Refine conditions, scope, or groups,” which loops back to the save-rule step.  No branch leads to “Edit rule → switch Action to Hide,” completing the loop.  The diagram emphasizes an iterative cycle: pilot in Resolve, monitor, refine if needed, then promote the rule to Hide once confident.](../../../Wiki snapshots/Image.png)
 
 
 ---
