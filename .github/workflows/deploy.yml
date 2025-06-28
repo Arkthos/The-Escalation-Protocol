@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write  # Required for GitHub Pages deployment
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -24,6 +27,9 @@ jobs:
 
       - name: Generate mkdocs.yml nav
         run: python generate_nav.py
+
+      - name: Create CNAME file
+        run: echo "the-escalation-protocol.cyberpax.cloud" > docs/CNAME
 
       - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force
