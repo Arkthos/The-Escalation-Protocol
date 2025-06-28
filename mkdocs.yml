@@ -1,0 +1,35 @@
+site_name: The Escalation Protocol
+theme:
+  name: material
+  features:
+  - navigation.sections
+  - navigation.tracking
+extra_css:
+- stylesheets/nav.css
+nav:
+- Home: index.md
+- Defender for Endpoint:
+  - Endpoint Detection and Response:
+    - Alert Tunning:
+      - Alert Tuning Quick‐Start Guide (Beginner Edition): Defender for Endpoint/Endpoint
+          Detection and Response/Alert Tunning/Alert-Tuning-Quick‐Start-Guide-(Beginner-Edition).md
+      - Alert Tuning – Comprehensive Guide (Advanced Edition): Defender for Endpoint/Endpoint
+          Detection and Response/Alert Tunning/Alert-Tuning-–-Comprehensive-Guide-(Advanced-Edition).md
+    - Device Control:
+      - ? How To Configure Device Control On Macos, Use Case 1. Deny Write Access
+          To All Usb Storage Except For Specific Vendorid And Productid Combinations
+          (Jamf)
+        : Defender for Endpoint/Endpoint Detection and Response/Device Control/How-to-Configure-Device-Control-on-macOS,-Use-case-1.-Deny-write-access-to-all-USB-storage-except-for-specific-VendorID-and-ProductID-combinations-(Jamf).md
+      - Using The Device Control Policy Sample Builder: Defender for Endpoint/Endpoint
+          Detection and Response/Device Control/Using-the-device-control-policy-sample-builder.md
+    - Threat Vulnerability Management:
+      - Troubleshooting Guide (Tsg) Cve‐2023‐49210 – Openssl Vulnerability In Node‐Openssl Npm Package: Defender
+          for Endpoint/Endpoint Detection and Response/Threat Vulnerability Management/Troubleshooting-Guide-(TSG)-CVE‐2023‐49210-–-OpenSSL-Vulnerability-in-node‐openssl-NPM-Package.md
+- Derecho informático:
+  - Delitos Informáticos En Costa Rica Mapeo Jurídico‐Técnico Y Controles Att&Ck: Derecho
+      informático/Delitos-Informáticos-en-Costa-Rica-Mapeo-Jurídico‐Técnico-y-Controles-ATT&CK.md
+  - Reflexión, Bienes Jurídicos Tutelados En Una Eventual Legislación De Ia En Costa Rica: Derecho
+      informático/Reflexión,-Bienes-jurídicos-tutelados-en-una-eventual-legislación-de-IA-en-Costa-Rica.md
+- Support Tips and Tools:
+  - Effective Case Notation Good Practices And Template: Support Tips and Tools/Effective-Case-Notation-Good-practices-and-template.md
+  - How To Craft An Effective Root Cause Analysis (Rca): Support Tips and Tools/How-to-Craft-an-Effective-Root-Cause-Analysis-(RCA).md
