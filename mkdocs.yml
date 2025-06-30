@@ -23,6 +23,10 @@ nav:
         : Defender for Endpoint/Endpoint Detection and Response/Device Control/How-to-Configure-Device-Control-on-macOS,-Use-case-1.-Deny-write-access-to-all-USB-storage-except-for-specific-VendorID-and-ProductID-combinations-(Jamf).md
       - Using The Device Control Policy Sample Builder: Defender for Endpoint/Endpoint
           Detection and Response/Device Control/Using-the-device-control-policy-sample-builder.md
+    - Tags:
+      - Data Driven Tags – Disabled And Isolated In Microsoft Defender For Endpoint: Defender
+          for Endpoint/Endpoint Detection and Response/Tags/Data-Driven Tags – Disabled
+          and Isolated in Microsoft Defender for Endpoint.md
     - Threat Vulnerability Management:
       - Troubleshooting Guide (Tsg) Cve‐2023‐49210 – Openssl Vulnerability In Node‐Openssl Npm Package: Defender
           for Endpoint/Endpoint Detection and Response/Threat Vulnerability Management/Troubleshooting-Guide-(TSG)-CVE‐2023‐49210-–-OpenSSL-Vulnerability-in-node‐openssl-NPM-Package.md
