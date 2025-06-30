@@ -55,7 +55,25 @@
                 </li>
                 <li class="toctree-l3 current"><a class="reference internal current" href="#">Alert Tuning – Comprehensive Guide (Advanced Edition)</a>
     <ul class="current">
-    <li class="toctree-l4"><a class="reference internal" href="#11-building-on-the-basics">🧱 1.1 Building on the Basics</a>
+    <li class="toctree-l4"><a class="reference internal" href="#1-purpose-audience">📘 1. Purpose &amp; Audience</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#2-detection-logic-core-concepts">🧠 2. Detection Logic &amp; Core Concepts</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#3-creating-rules-with-clear-intent">🎯 3. Creating Rules with Clear Intent</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#4-lifecycle-case-study-red-team-scanner">🧪 4. Lifecycle Case Study: Red Team Scanner</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#6-real-world-logic-patterns">🧭 6. Real-World Logic Patterns</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#8-governance-risk-mitigation">🛡 8. Governance &amp; Risk Mitigation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#9-troubleshooting-pitfalls">🧰 9. Troubleshooting &amp; Pitfalls</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#10-system-limits-edge-cases">⚙️ 10. System Limits &amp; Edge Cases</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#11-further-resources">📚 11. Further Resources</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#12-microsoft-defender-xdr-alert-tuning-rule-lifecycle-workbook">📓 12. Microsoft Defender XDR – Alert Tuning Rule Lifecycle Workbook</a>
     </li>
     </ul>
                 </li>
@@ -118,7 +136,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h2 id="1-purpose-audience">📘 1. Purpose &amp; Audience</h2>
+                <h1 id="alert-tuning-comprehensive-guide-advanced-edition">Alert Tuning – Comprehensive Guide (Advanced Edition)</h1>
+<h2 id="1-purpose-audience">📘 1. Purpose &amp; Audience</h2>
 <p>This guide is designed for those with foundational experience in Microsoft Defender XDR alert tuning looking to step up their game. It builds on the <strong>Beginner Edition</strong>, expanding into advanced rule logic, strategic tuning practices, and operational governance. The aim is to bridge the gap between familiarity and expertise—helping professionals design rules that are not only effective, but also scalable, auditable, and resilient in real-world security operations.</p>
 <h3 id="11-building-on-the-basics">🧱 1.1 Building on the Basics</h3>
 <p>Already comfortable with basic tuning using "Resolve" and "Hide"? This guide will help you:</p>
@@ -133,37 +152,35 @@
 <p>A well-structured rule must align with how Defender evaluates alerts. Here are the essential pieces:</p>
 <h3 id="21-key-elements">🛠 2.1 Key Elements</h3>
 <ul>
-<li>
-<p><strong>Alert</strong>: A signal triggered by Defender, carrying metadata such as AlertDisplayName, DetectionSource, and a list of Evidence items.<br />
-<img alt="EICAR test file malware alert was prevented by Microsoft Defender; alert is resolved." src="../../../../Wiki snapshots/Image%20%281%29.png" /></p>
-</li>
-<li>
-<p><strong>Evidence / IOC</strong>: Entities that cause the alert—files, IPs, users, devices, etc.<br />
-<img alt="Screenshot showing malware detection details for a file named 'X5O!...EICAR...'" src="../../../../Wiki snapshots/Image%20%282%29.png" /></p>
-</li>
-<li>
-<p><strong>Property</strong>: Describes an attribute of the evidence, like ProcessName, DeviceTag, or SHA1.<br />
-<img alt="Malware detection details of EICAR test file including SHA1 hash, file path, and unsigned signer." src="../../../../Wiki snapshots/Image%20%283%29.png" /></p>
-</li>
-<li>
-<p><strong>Condition</strong>: A filter built with Evidence + Property + Operator + Value, forming the logic behind every rule.<br />
-<img alt="Screenshot of a conditions panel from a security alert filtering interface." src="../../../../Wiki snapshots/Image%20%284%29.png" /></p>
-</li>
-<li>
-<p><strong>Group/Sub-group</strong>: Containers to structure AND/OR logic. Sub-groups allow nesting for more granular logic.<br />
-<img alt="Screenshot of a security rule configuration interface showing grouped conditions." src="../../../../Wiki snapshots/Image%20%285%29.png" /></p>
-</li>
-<li>
-<p><strong>Service Source</strong>: The Defender product where the alert originated (e.g., Defender for Endpoint, Defender for Office 365, Identity, etc.).<br />
-<img alt="A screenshot of an XDR alert highlighting the service source of the alert" src="../../../../Wiki snapshots/Image%20%286%29.png" /></p>
-</li>
-<li>
-<p><strong>Action</strong>:  </p>
-</li>
-<li><strong>Resolve</strong>: Keeps alert visible but closed  </li>
-<li><strong>Hide</strong>: Fully suppresses alert from queues and dashboards<br />
-<img alt="Screenshot from a security alert rule configuration interface showing action options." src="../../../../Wiki snapshots/Image%20%287%29.png" /></li>
+<li><strong>Alert</strong>: A signal triggered by Defender, carrying metadata such as AlertDisplayName, DetectionSource, and a list of Evidence items.</li>
 </ul>
+<p><img alt="EICAR test file malware alert was prevented by Microsoft Defender; alert is resolved." src="../../../../Wiki snapshots/Image%20%281%29.png" /></p>
+<ul>
+<li><strong>Evidence / IOC</strong>: Entities that cause the alert—files, IPs, users, devices, etc.</li>
+</ul>
+<p><img alt="Screenshot showing malware detection details for a file named 'X5O!...EICAR...'" src="../../../../Wiki snapshots/Image%20%282%29.png" /></p>
+<ul>
+<li><strong>Property</strong>: Describes an attribute of the evidence, like ProcessName, DeviceTag, or SHA1.</li>
+</ul>
+<p><img alt="Malware detection details of EICAR test file including SHA1 hash, file path, and unsigned signer." src="../../../../Wiki snapshots/Image%20%283%29.png" /></p>
+<ul>
+<li><strong>Condition</strong>: A filter built with Evidence + Property + Operator + Value, forming the logic behind every rule.</li>
+</ul>
+<p><img alt="Screenshot of a conditions panel from a security alert filtering interface." src="../../../../Wiki snapshots/Image%20%284%29.png" /></p>
+<ul>
+<li><strong>Group/Sub-group</strong>: Containers to structure AND/OR logic. Sub-groups allow nesting for more granular logic.</li>
+</ul>
+<p><img alt="Screenshot of a security rule configuration interface showing grouped conditions." src="../../../../Wiki snapshots/Image%20%285%29.png" /></p>
+<ul>
+<li><strong>Service Source</strong>: The Defender product where the alert originated (e.g., Defender for Endpoint, Defender for Office 365, Identity, etc.).</li>
+</ul>
+<p><img alt="A screenshot of an XDR alert highlighting the service source of the alert" src="../../../../Wiki snapshots/Image%20%286%29.png" /></p>
+<ul>
+<li><strong>Action</strong>:</li>
+<li><strong>Resolve</strong>: Keeps alert visible but closed</li>
+<li><strong>Hide</strong>: Fully suppresses alert from queues and dashboards</li>
+</ul>
+<p><img alt="Screenshot from a security alert rule configuration interface showing action options." src="../../../../Wiki snapshots/Image%20%287%29.png" /></p>
 <h3 id="22-evaluation-order">🧮 2.2 Evaluation Order</h3>
 <p>Defender evaluates logic like a code compiler:</p>
 <ul>
@@ -171,8 +188,8 @@
 <li>Then parent groups, evaluated left to right</li>
 </ul>
 <h3 id="23-logic-examples">❗ 2.3 Logic Examples</h3>
-<p>Alert tuning logic works much like a mathematical truth function based on Boolean logic.
-<img alt="Mathematical representation of the rule evaluation logic" src="../../../../Wiki snapshots/Image%20(8).png" /></p>
+<p>Alert tuning logic works much like a mathematical truth function based on Boolean logic.</p>
+<p><img alt="Mathematical representation of the rule evaluation logic" src="../../../../Wiki snapshots/Image%20(8).png" /></p>
 <p>We could also see it as:</p>
 <pre><code>Rule = Group1 AND Group2
   Group1 = (Condition1 OR Condition2)
@@ -324,7 +341,7 @@ else:
 <li>This helps avoid suppression rules based on fields that will never match.</li>
 <li>Always validate additional conditions manually by comparing with a raw alert sample.</li>
 </ul>
-<p><img alt="A screenshot Showing the location of the auto-fill feature in alert tunning." src="../../../../Wiki snapshots/Image%20(11).png" /></p>
+<p><img alt="A screenshot showing the location of the auto-fill feature in alert tuning." src="../../../../Wiki snapshots/Image%20(11).png" /></p>
 <p>🌱 <strong>Contextual Suppression — Future Direction</strong>: While not currently available, there is a long-term vision to support contextual suppression. This would allow:</p>
 <ul>
 <li>Evaluating suppression rules after alert enrichment, using a more complete set of fields.</li>
