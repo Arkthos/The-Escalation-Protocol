@@ -5,7 +5,7 @@
 
 This article provides detailed technical insights into the behavior and detection of data-driven tags—specifically the `Disabled` and `Isolated` tags—in Microsoft Defender for Endpoint (MDE). These tags are not directly stored in standard data tables but are inferred from system signals and logic, which may cause confusion for security teams attempting to audit or automate actions based on them.
 
-![Device Tags UI](../../../Wiki snapshots/74543049-a1dc-4848-b0cc-2431d92fc9ea.png)
+![Device Tags UI]('https://github.com/Arkthos/The-Escalation-Protocol/blob/main/docs/Wiki%20snapshots/74543049-a1dc-4848-b0cc-2431d92fc9ea.png')
 *Tags such as "Disabled" and "Sensitive" shown in the MDE portal*
 
 ## Problem
