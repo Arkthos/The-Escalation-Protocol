@@ -34,7 +34,7 @@ These behaviors are **expected and by design**.
 
 While the `Disabled` tag does not appear in MDE data tables, related conditions **can be inferred** from MDI data using KQL in Microsoft Sentinel or the M365 Defender advanced hunting portal.
 
-![AD Computer Object Disabled]('e24b8794-e42f-49d2-9b30-712a5ffc5a57.png')
+![AD Computer Object Disabled](e24b8794-e42f-49d2-9b30-712a5ffc5a57.png)
 *Device status in Active Directory showing disabled state*
 
 #### Sample Queries:
@@ -57,7 +57,7 @@ IdentityInfo
 
 The `Isolated` tag reflects device isolation status. It is not a column in the `DeviceInfo` table, but isolation actions **can be tracked via mitigation data**.
 
-![KQL Query for Isolation]('89eb76b0-7e0e-4de6-ad6a-b55d3956074a.png')
+![KQL Query for Isolation](89eb76b0-7e0e-4de6-ad6a-b55d3956074a.png)
 *Query to detect isolated devices based on mitigation status*
 
 #### Example Query:
@@ -68,7 +68,7 @@ DeviceInfo
 | project Timestamp, DeviceName, MitigationStatus
 ```
 
-![Device Isolation Status in UI]('9203fc2d-67d2-406f-b936-1765512c2a2b.png')
+![Device Isolation Status in UI](9203fc2d-67d2-406f-b936-1765512c2a2b.png)
 *Devices listed with "Isolated" status in the portal*
 
 > This approach retrieves devices currently marked as isolated, correlating with the tag shown in the portal.
@@ -86,11 +86,3 @@ When working with **data-driven tags**, focus on identifying the **triggering co
 ## Next Steps
 
 If the environment involves both MDI and MDE, and further clarification is required regarding data correlation or tag origins, it's recommended to **escalate to MDI support** for authoritative insights and internal documentation.
-
-## Acknowledgements
-
-Special thanks to those involved in case investigation and collaboration across Defender components.
-
----
-
-**Note**: This article is derived from case 2506260040007402 but contains no customer-specific or organizational data.
