@@ -5,7 +5,7 @@
 
 This article provides detailed technical insights into the behavior and detection of data-driven tags—specifically the `Disabled` and `Isolated` tags—in Microsoft Defender for Endpoint (MDE). These tags are not directly stored in standard data tables but are inferred from system signals and logic, which may cause confusion for security teams attempting to audit or automate actions based on them.
 
-![Device Tags UI](../../Wiki snapshots/74543049-a1dc-4848-b0cc-2431d92fc9ea.png)
+![Device Tags UI](../../../Wiki snapshots/74543049-a1dc-4848-b0cc-2431d92fc9ea.png)
 *Tags such as "Disabled" and "Sensitive" shown in the MDE portal*
 
 ## Problem
@@ -34,7 +34,7 @@ These behaviors are **expected and by design**.
 
 While the `Disabled` tag does not appear in MDE data tables, related conditions **can be inferred** from MDI data using KQL in Microsoft Sentinel or the M365 Defender advanced hunting portal.
 
-![AD Computer Object Disabled](../../Wiki snapshots/e24b8794-e42f-49d2-9b30-712a5ffc5a57.png)
+![AD Computer Object Disabled](../../../Wiki snapshots/e24b8794-e42f-49d2-9b30-712a5ffc5a57.png)
 *Device status in Active Directory showing disabled state*
 
 #### Sample Queries:
@@ -57,7 +57,7 @@ IdentityInfo
 
 The `Isolated` tag reflects device isolation status. It is not a column in the `DeviceInfo` table, but isolation actions **can be tracked via mitigation data**.
 
-![KQL Query for Isolation](../../Wiki snapshots/89eb76b0-7e0e-4de6-ad6a-b55d3956074a.png)
+![KQL Query for Isolation](../../../Wiki snapshots/89eb76b0-7e0e-4de6-ad6a-b55d3956074a.png)
 *Query to detect isolated devices based on mitigation status*
 
 #### Example Query:
@@ -68,7 +68,7 @@ DeviceInfo
 | project Timestamp, DeviceName, MitigationStatus
 ```
 
-![Device Isolation Status in UI](../../Wiki snapshots/9203fc2d-67d2-406f-b936-1765512c2a2b.png)
+![Device Isolation Status in UI](../../../Wiki snapshots/9203fc2d-67d2-406f-b936-1765512c2a2b.png)
 *Devices listed with "Isolated" status in the portal*
 
 > This approach retrieves devices currently marked as isolated, correlating with the tag shown in the portal.
