@@ -1,3 +1,5 @@
+# Alert Tuning – Comprehensive Guide (Advanced Edition)
+
 ## 📘 1. Purpose & Audience
 
 This guide is designed for those with foundational experience in Microsoft Defender XDR alert tuning looking to step up their game. It builds on the **Beginner Edition**, expanding into advanced rule logic, strategic tuning practices, and operational governance. The aim is to bridge the gap between familiarity and expertise—helping professionals design rules that are not only effective, but also scalable, auditable, and resilient in real-world security operations.
@@ -19,27 +21,34 @@ A well-structured rule must align with how Defender evaluates alerts. Here are t
 
 ### 🛠 2.1 Key Elements
 
-- **Alert**: A signal triggered by Defender, carrying metadata such as AlertDisplayName, DetectionSource, and a list of Evidence items.  
+- **Alert**: A signal triggered by Defender, carrying metadata such as AlertDisplayName, DetectionSource, and a list of Evidence items.
+
   ![EICAR test file malware alert was prevented by Microsoft Defender; alert is resolved.](../../../../Wiki snapshots/Image%20%281%29.png)
 
-- **Evidence / IOC**: Entities that cause the alert—files, IPs, users, devices, etc.  
+- **Evidence / IOC**: Entities that cause the alert—files, IPs, users, devices, etc.
+
   ![Screenshot showing malware detection details for a file named 'X5O!...EICAR...'](../../../../Wiki snapshots/Image%20%282%29.png)
 
-- **Property**: Describes an attribute of the evidence, like ProcessName, DeviceTag, or SHA1.  
+- **Property**: Describes an attribute of the evidence, like ProcessName, DeviceTag, or SHA1.
+
   ![Malware detection details of EICAR test file including SHA1 hash, file path, and unsigned signer.](../../../../Wiki snapshots/Image%20%283%29.png)
 
-- **Condition**: A filter built with Evidence + Property + Operator + Value, forming the logic behind every rule.  
+- **Condition**: A filter built with Evidence + Property + Operator + Value, forming the logic behind every rule.
+
   ![Screenshot of a conditions panel from a security alert filtering interface.](../../../../Wiki snapshots/Image%20%284%29.png)
 
-- **Group/Sub-group**: Containers to structure AND/OR logic. Sub-groups allow nesting for more granular logic.  
+- **Group/Sub-group**: Containers to structure AND/OR logic. Sub-groups allow nesting for more granular logic.
+
   ![Screenshot of a security rule configuration interface showing grouped conditions.](../../../../Wiki snapshots/Image%20%285%29.png)
 
-- **Service Source**: The Defender product where the alert originated (e.g., Defender for Endpoint, Defender for Office 365, Identity, etc.).  
+- **Service Source**: The Defender product where the alert originated (e.g., Defender for Endpoint, Defender for Office 365, Identity, etc.).
+
   ![A screenshot of an XDR alert highlighting the service source of the alert](../../../../Wiki snapshots/Image%20%286%29.png)
 
-- **Action**:  
-  - **Resolve**: Keeps alert visible but closed  
-  - **Hide**: Fully suppresses alert from queues and dashboards  
+- **Action**:
+  - **Resolve**: Keeps alert visible but closed
+  - **Hide**: Fully suppresses alert from queues and dashboards
+
   ![Screenshot from a security alert rule configuration interface showing action options.](../../../../Wiki snapshots/Image%20%287%29.png)
 
 
@@ -53,7 +62,9 @@ Defender evaluates logic like a code compiler:
 
 
 ### ❗ 2.3 Logic Examples
+
 Alert tuning logic works much like a mathematical truth function based on Boolean logic.
+
 ![Mathematical representation of the rule evaluation logic](../../../../Wiki snapshots/Image%20(8).png)
 
 We could also see it as:
@@ -211,7 +222,7 @@ However, this enriched data is not supported in Alert Tuning. The reason is:
 - This helps avoid suppression rules based on fields that will never match.
 - Always validate additional conditions manually by comparing with a raw alert sample.
 
-![A screenshot Showing the location of the auto-fill feature in alert tunning.](../../../../Wiki snapshots/Image%20(11).png)
+![A screenshot showing the location of the auto-fill feature in alert tuning.](../../../../Wiki snapshots/Image%20(11).png)
 
 🌱 **Contextual Suppression — Future Direction**: While not currently available, there is a long-term vision to support contextual suppression. This would allow:
 
