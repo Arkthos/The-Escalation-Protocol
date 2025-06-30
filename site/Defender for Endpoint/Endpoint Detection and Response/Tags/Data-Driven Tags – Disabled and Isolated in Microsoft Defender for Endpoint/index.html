@@ -141,7 +141,7 @@
                 <h1 id="data-driven-tags-disabled-and-isolated-in-microsoft-defender-for-endpoint">Data-Driven Tags – Disabled and Isolated in Microsoft Defender for Endpoint</h1>
 <h2 id="summary">Summary</h2>
 <p>This article provides detailed technical insights into the behavior and detection of data-driven tags—specifically the <code>Disabled</code> and <code>Isolated</code> tags—in Microsoft Defender for Endpoint (MDE). These tags are not directly stored in standard data tables but are inferred from system signals and logic, which may cause confusion for security teams attempting to audit or automate actions based on them.</p>
-<p><img alt="Device Tags UI" src="" title="https://github.com/Arkthos/The-Escalation-Protocol/blob/main/docs/Wiki%20snapshots/74543049-a1dc-4848-b0cc-2431d92fc9ea.png" />
+<p><img alt="Device Tags UI" src="https://github.com/Arkthos/The-Escalation-Protocol/blob/main/docs/Wiki%20snapshots/74543049-a1dc-4848-b0cc-2431d92fc9ea.png" />
 <em>Tags such as "Disabled" and "Sensitive" shown in the MDE portal</em></p>
 <h2 id="problem">Problem</h2>
 <p>Tags such as <code>Disabled</code> and <code>Isolated</code> appear in the Microsoft Defender XDR portal, but they are not queryable via standard tables such as <code>DeviceInfo</code> in Microsoft Defender for Endpoint. This limitation complicates data discovery, reporting, and automation efforts.</p>
