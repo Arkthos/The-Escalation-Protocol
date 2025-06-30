@@ -34,7 +34,7 @@ These behaviors are **expected and by design**.
 
 While the `Disabled` tag does not appear in MDE data tables, related conditions **can be inferred** from MDI data using KQL in Microsoft Sentinel or the M365 Defender advanced hunting portal.
 
-![AD Computer Object Disabled](../../../Wiki snapshots/e24b8794-e42f-49d2-9b30-712a5ffc5a57.png)
+![AD Computer Object Disabled]('https://github.com/Arkthos/The-Escalation-Protocol/blob/main/docs/Wiki%20snapshots/e24b8794-e42f-49d2-9b30-712a5ffc5a57.png')
 *Device status in Active Directory showing disabled state*
 
 #### Sample Queries:
@@ -57,7 +57,7 @@ IdentityInfo
 
 The `Isolated` tag reflects device isolation status. It is not a column in the `DeviceInfo` table, but isolation actions **can be tracked via mitigation data**.
 
-![KQL Query for Isolation](../../../Wiki snapshots/89eb76b0-7e0e-4de6-ad6a-b55d3956074a.png)
+![KQL Query for Isolation]('https://github.com/Arkthos/The-Escalation-Protocol/blob/main/docs/Wiki%20snapshots/89eb76b0-7e0e-4de6-ad6a-b55d3956074a.png')
 *Query to detect isolated devices based on mitigation status*
 
 #### Example Query:
@@ -68,7 +68,7 @@ DeviceInfo
 | project Timestamp, DeviceName, MitigationStatus
 ```
 
-![Device Isolation Status in UI](../../../Wiki snapshots/9203fc2d-67d2-406f-b936-1765512c2a2b.png)
+![Device Isolation Status in UI]('https://github.com/Arkthos/The-Escalation-Protocol/blob/main/docs/Wiki%20snapshots/9203fc2d-67d2-406f-b936-1765512c2a2b.png')
 *Devices listed with "Isolated" status in the portal*
 
 > This approach retrieves devices currently marked as isolated, correlating with the tag shown in the portal.

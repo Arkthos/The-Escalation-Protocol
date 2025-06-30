@@ -162,7 +162,7 @@
 <h2 id="resolution">Resolution</h2>
 <h3 id="querying-for-disabled-accounts-mdi-related">🔍 Querying for Disabled Accounts (MDI Related)</h3>
 <p>While the <code>Disabled</code> tag does not appear in MDE data tables, related conditions <strong>can be inferred</strong> from MDI data using KQL in Microsoft Sentinel or the M365 Defender advanced hunting portal.</p>
-<p><img alt="AD Computer Object Disabled" src="../../../../Wiki%20snapshots/e24b8794-e42f-49d2-9b30-712a5ffc5a57.png" />
+<p><img alt="AD Computer Object Disabled" src="" title="https://github.com/Arkthos/The-Escalation-Protocol/blob/main/docs/Wiki%20snapshots/e24b8794-e42f-49d2-9b30-712a5ffc5a57.png" />
 <em>Device status in Active Directory showing disabled state</em></p>
 <h4 id="sample-queries">Sample Queries:</h4>
 <pre><code class="language-kql">IdentityDirectoryEvents
@@ -178,14 +178,14 @@
 </blockquote>
 <h3 id="understanding-the-isolated-tag-mde-related">🔍 Understanding the Isolated Tag (MDE Related)</h3>
 <p>The <code>Isolated</code> tag reflects device isolation status. It is not a column in the <code>DeviceInfo</code> table, but isolation actions <strong>can be tracked via mitigation data</strong>.</p>
-<p><img alt="KQL Query for Isolation" src="../../../../Wiki%20snapshots/89eb76b0-7e0e-4de6-ad6a-b55d3956074a.png" />
+<p><img alt="KQL Query for Isolation" src="" title="https://github.com/Arkthos/The-Escalation-Protocol/blob/main/docs/Wiki%20snapshots/89eb76b0-7e0e-4de6-ad6a-b55d3956074a.png" />
 <em>Query to detect isolated devices based on mitigation status</em></p>
 <h4 id="example-query">Example Query:</h4>
 <pre><code class="language-kql">DeviceInfo
 | where MitigationStatus == '{&quot;Isolated&quot;:&quot;true&quot;}'
 | project Timestamp, DeviceName, MitigationStatus
 </code></pre>
-<p><img alt="Device Isolation Status in UI" src="../../../../Wiki%20snapshots/9203fc2d-67d2-406f-b936-1765512c2a2b.png" />
+<p><img alt="Device Isolation Status in UI" src="" title="https://github.com/Arkthos/The-Escalation-Protocol/blob/main/docs/Wiki%20snapshots/9203fc2d-67d2-406f-b936-1765512c2a2b.png" />
 <em>Devices listed with "Isolated" status in the portal</em></p>
 <blockquote>
 <p>This approach retrieves devices currently marked as isolated, correlating with the tag shown in the portal.</p>
