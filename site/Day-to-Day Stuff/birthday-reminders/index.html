@@ -49,39 +49,41 @@
               <ul class="current">
                   <li class="toctree-l1 current"><a class="reference internal current" href="#">Birthday Reminders</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#1-sheet-setup">1. Sheet Setup</a>
+    <li class="toctree-l2"><a class="reference internal" href="#step-1-create-your-birthday-list">Step 1: Create Your Birthday List</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-script-setup">2. Script Setup</a>
+    <li class="toctree-l2"><a class="reference internal" href="#step-2-open-the-code-editor">Step 2: Open the Code Editor</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3-script-create-recurring-reminder-events">3. Script: Create Recurring Reminder Events</a>
+    <li class="toctree-l2"><a class="reference internal" href="#step-3-add-the-birthday-reminder-recipe">Step 3: Add the Birthday Reminder Recipe</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#4-script-delete-old-recurring-reminder-events">4. Script: Delete Old Recurring Reminder Events</a>
+    <li class="toctree-l2"><a class="reference internal" href="#step-4-add-the-cleanup-recipe-optional-but-recommended">Step 4: Add the Cleanup Recipe (Optional but Recommended)</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#5-shared-helper">5. Shared Helper</a>
+    <li class="toctree-l2"><a class="reference internal" href="#step-5-add-the-helper-recipe">Step 5: Add the Helper Recipe</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#6-usage">6. Usage</a>
+    <li class="toctree-l2"><a class="reference internal" href="#step-6-run-your-birthday-reminder-system">Step 6: Run Your Birthday Reminder System</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#to-create-reminders">To create reminders:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#to-create-your-reminders">To Create Your Reminders:</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#to-clean-up-old-ones">To clean up old ones:</a>
+    <li class="toctree-l3"><a class="reference internal" href="#to-clean-up-old-reminders-if-needed">To Clean Up Old Reminders (if needed):</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#how-to-see-what-happened">How to See What Happened:</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#7-modifications-use-cases">7. Modifications &amp; Use Cases</a>
+    <li class="toctree-l2"><a class="reference internal" href="#customization-options-for-advanced-users">Customization Options (For Advanced Users)</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#a-only-create-one-reminder-eg-day-before">A. Only Create One Reminder (e.g. Day Before)</a>
+    <li class="toctree-l3"><a class="reference internal" href="#option-a-only-get-reminders-the-day-before">Option A: Only Get Reminders the Day Before</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#b-add-a-same-day-reminder">B. Add a Same-Day Reminder</a>
+    <li class="toctree-l3"><a class="reference internal" href="#option-b-add-a-same-day-reminder">Option B: Add a Same-Day Reminder</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#c-change-the-number-of-years-the-events-repeat">C. Change the Number of Years the Events Repeat</a>
+    <li class="toctree-l3"><a class="reference internal" href="#option-c-change-how-many-years-the-reminders-repeat">Option C: Change How Many Years the Reminders Repeat</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#d-use-a-different-calendar">D. Use a Different Calendar</a>
+    <li class="toctree-l3"><a class="reference internal" href="#option-d-use-a-different-calendar">Option D: Use a Different Calendar</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#e-use-a-column-to-filter-who-gets-reminders">E. Use a Column to Filter Who Gets Reminders</a>
+    <li class="toctree-l3"><a class="reference internal" href="#option-e-only-create-reminders-for-certain-people">Option E: Only Create Reminders for Certain People</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#f-change-the-reminder-titles">F. Change the Reminder Titles</a>
+    <li class="toctree-l3"><a class="reference internal" href="#option-f-change-the-reminder-text">Option F: Change the Reminder Text</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#tip-test-with-one-row">Tip: Test With One Row</a>
+    <li class="toctree-l3"><a class="reference internal" href="#testing-tip-start-with-just-one-person">Testing Tip: Start with Just One Person</a>
     </li>
         </ul>
     </li>
@@ -161,17 +163,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="google-calendar-birthday-reminder-automation">Google Calendar Birthday Reminder Automation</h1>
-<p>This setup creates recurring Google Calendar reminders for birthdays listed in a Google Sheet. It generates 3 reminders for each birthday:</p>
-<ul>
-<li>One month before</li>
-<li>One week before</li>
-<li>One day before (labeled as "Tomorrow is...")</li>
-</ul>
-<p>Each of these reminders is a separate all-day event that repeats annually for 30 years.</p>
+                <h1 id="automatic-birthday-reminders-for-google-calendar">Automatic Birthday Reminders for Google Calendar</h1>
+<p>Never forget a birthday again! This guide shows you how to automatically create birthday reminders in your Google Calendar using a simple Google Sheet. </p>
+<p><strong>What this does:</strong>
+- Creates 3 automatic reminders for each birthday:
+  - 1 month before
+  - 1 week before<br />
+  - 1 day before (labeled as "Tomorrow is...")
+- Reminders repeat every year for 30 years
+- Works with any number of birthdays</p>
+<p><strong>What you need:</strong>
+- A Google account (free)
+- 15-20 minutes to set up
+- No programming experience required!</p>
 <hr />
-<h2 id="1-sheet-setup">1. Sheet Setup</h2>
-<p>Create a Google Sheet with the following structure:</p>
+<h2 id="step-1-create-your-birthday-list">Step 1: Create Your Birthday List</h2>
+<p>First, we'll create a simple list of birthdays in Google Sheets.</p>
+<p><strong>Instructions:</strong>
+1. Go to <a href="https://sheets.google.com">sheets.google.com</a> and create a new spreadsheet
+2. In the first row, type these headers:
+   - Cell A1: <code>Name</code>
+   - Cell B1: <code>Birthday</code>
+3. Add birthdays in the rows below like this:</p>
 <table>
 <thead>
 <tr>
@@ -190,18 +203,28 @@
 </tr>
 </tbody>
 </table>
-<ul>
-<li>Dates must include the full year (present year not birth).</li>
-<li>Format: <code>MM/DD/YYYY</code></li>
-</ul>
+<p><strong>Important notes:</strong>
+- Use this year's date (not their birth year)
+- Use the MM/DD/YYYY format (month/day/year)
+- You can add as many people as you want</p>
 <hr />
-<h2 id="2-script-setup">2. Script Setup</h2>
-<p>Open the Script Editor:</p>
-<pre><code>Extensions → Apps Script
-</code></pre>
-<p>Delete any existing code and paste the script below.</p>
+<h2 id="step-2-open-the-code-editor">Step 2: Open the Code Editor</h2>
+<p>Now we'll add some automated instructions (called a "script") to make the magic happen.</p>
+<p><strong>Instructions:</strong>
+1. In your Google Sheet, click on <code>Extensions</code> in the top menu
+2. Click on <code>Apps Script</code> from the dropdown
+3. A new tab will open - this is Google's code editor
+4. You'll see some sample code - delete everything in the big text box
+5. Leave this tab open - we'll use it in the next step</p>
+<p><strong>Don't worry!</strong> You don't need to understand the code. Just think of it as a recipe that tells Google what to do.</p>
 <hr />
-<h2 id="3-script-create-recurring-reminder-events">3. Script: Create Recurring Reminder Events</h2>
+<h2 id="step-3-add-the-birthday-reminder-recipe">Step 3: Add the Birthday Reminder Recipe</h2>
+<p>Copy and paste this "recipe" into the code editor you opened in Step 2.</p>
+<p><strong>Instructions:</strong>
+1. Copy ALL the code below (click and drag to select, then Ctrl+C or Cmd+C)
+2. Go back to your Apps Script tab
+3. Paste it into the empty text box (Ctrl+V or Cmd+V)</p>
+<p><strong>The Recipe (copy everything between the lines):</strong></p>
 <pre><code class="language-javascript">function createCustomBirthdayReminders() {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   const calendar = CalendarApp.getDefaultCalendar();
@@ -262,8 +285,12 @@
 }
 </code></pre>
 <hr />
-<h2 id="4-script-delete-old-recurring-reminder-events">4. Script: Delete Old Recurring Reminder Events</h2>
-<p>Use this to clean up old birthday reminders created in previous runs (e.g. if the data was wrong).</p>
+<h2 id="step-4-add-the-cleanup-recipe-optional-but-recommended">Step 4: Add the Cleanup Recipe (Optional but Recommended)</h2>
+<p>This recipe helps you delete old reminders if you make mistakes or want to start over.</p>
+<p><strong>Instructions:</strong>
+1. Scroll down in your Apps Script editor
+2. Copy and paste this second recipe below the first one</p>
+<p><strong>The Cleanup Recipe:</strong></p>
 <pre><code class="language-javascript">function deleteOldBirthdayEventSeries() {
   const calendar = CalendarApp.getDefaultCalendar();
   const cutoffDate = new Date(&quot;2024-01-01&quot;);
@@ -296,8 +323,9 @@
 }
 </code></pre>
 <hr />
-<h2 id="5-shared-helper">5. Shared Helper</h2>
-<p>This avoids API throttling errors from Google.</p>
+<h2 id="step-5-add-the-helper-recipe">Step 5: Add the Helper Recipe</h2>
+<p>This last piece prevents errors when Google gets too busy. Add it below the other recipes.</p>
+<p><strong>The Helper Recipe:</strong></p>
 <pre><code class="language-javascript">function safeCall(callback) {
   let attempts = 0;
   let delay = 1000;
@@ -319,56 +347,100 @@
 }
 </code></pre>
 <hr />
-<h2 id="6-usage">6. Usage</h2>
-<h3 id="to-create-reminders">To create reminders:</h3>
+<h2 id="step-6-run-your-birthday-reminder-system">Step 6: Run Your Birthday Reminder System</h2>
+<p>Now let's make it work!</p>
+<h3 id="to-create-your-reminders">To Create Your Reminders:</h3>
+<ol>
+<li>
+<p><strong>Choose the function:</strong> At the top of your Apps Script editor, you'll see a dropdown that probably says "Select function". Click on it and choose <code>createCustomBirthdayReminders</code></p>
+</li>
+<li>
+<p><strong>Run it:</strong> Click the triangular "Play" button (▶️) next to the dropdown</p>
+</li>
+<li>
+<p><strong>Grant permissions:</strong> The first time you run this, Google will ask for permissions:</p>
+</li>
+<li>Click "Review permissions" </li>
+<li>Choose your Google account</li>
+<li>Click "Advanced" then "Go to [your project name]"</li>
+<li>
+<p>Click "Allow"</p>
+</li>
+<li>
+<p><strong>Wait:</strong> The system will create all your reminders. This might take a minute or two.</p>
+</li>
+</ol>
+<h3 id="to-clean-up-old-reminders-if-needed">To Clean Up Old Reminders (if needed):</h3>
+<ol>
+<li><strong>Choose the cleanup function:</strong> In the dropdown, select <code>deleteOldBirthdayEventSeries</code></li>
+<li><strong>Run it:</strong> Click the play button</li>
+<li><strong>Check the results:</strong> This will remove old birthday reminders</li>
+</ol>
+<h3 id="how-to-see-what-happened">How to See What Happened:</h3>
 <ul>
-<li>Select <code>createCustomBirthdayReminders</code> in the Apps Script UI</li>
-<li>Run it</li>
-<li>Grant permissions on first run</li>
+<li>Click <code>View</code> in the top menu, then <code>Logs</code> to see what the system did</li>
+<li>Check your Google Calendar - you should see your new birthday reminders!</li>
 </ul>
-<h3 id="to-clean-up-old-ones">To clean up old ones:</h3>
-<ul>
-<li>Run <code>deleteOldBirthdayEventSeries</code></li>
-</ul>
-<p>Logs can be viewed with <code>View → Logs</code> in the Script Editor.</p>
 <hr />
-<h2 id="7-modifications-use-cases">7. Modifications &amp; Use Cases</h2>
-<p>The script is designed to create three recurring reminders per birthday. Below are some common ways to change this behavior, with clear instructions.</p>
+<h2 id="customization-options-for-advanced-users">Customization Options (For Advanced Users)</h2>
+<p>Want to change how the reminders work? Here are some easy modifications you can make. Find the section in your code that looks like this and change it:</p>
+<pre><code class="language-javascript">const reminders = [
+  { daysBefore: 30, label: &quot;One month to&quot; },
+  { daysBefore: 7, label: &quot;One week to&quot; },
+  { daysBefore: 1, label: &quot;Tomorrow is&quot; }
+];
+</code></pre>
 <hr />
-<h3 id="a-only-create-one-reminder-eg-day-before">A. Only Create One Reminder (e.g. Day Before)</h3>
+<h3 id="option-a-only-get-reminders-the-day-before">Option A: Only Get Reminders the Day Before</h3>
+<p>Replace the reminders section with:</p>
 <pre><code class="language-javascript">const reminders = [
   { daysBefore: 1, label: &quot;Tomorrow is&quot; }
 ];
 </code></pre>
 <hr />
-<h3 id="b-add-a-same-day-reminder">B. Add a Same-Day Reminder</h3>
+<h3 id="option-b-add-a-same-day-reminder">Option B: Add a Same-Day Reminder</h3>
+<p>Replace the reminders section with:</p>
 <pre><code class="language-javascript">const reminders = [
   { daysBefore: 1, label: &quot;Tomorrow is&quot; },
   { daysBefore: 0, label: &quot;Today is&quot; }
 ];
 </code></pre>
 <hr />
-<h3 id="c-change-the-number-of-years-the-events-repeat">C. Change the Number of Years the Events Repeat</h3>
-<p>Replace <code>.times(30)</code> with <code>.times(10)</code> to repeat for 10 years instead.</p>
+<h3 id="option-c-change-how-many-years-the-reminders-repeat">Option C: Change How Many Years the Reminders Repeat</h3>
+<p>Look for this part: <code>.times(30)</code> and change the number. For example:
+- <code>.times(10)</code> = reminders for 10 years
+- <code>.times(50)</code> = reminders for 50 years</p>
 <hr />
-<h3 id="d-use-a-different-calendar">D. Use a Different Calendar</h3>
+<h3 id="option-d-use-a-different-calendar">Option D: Use a Different Calendar</h3>
+<p>If you have multiple calendars, you can specify which one to use. Replace this line:</p>
+<pre><code class="language-javascript">const calendar = CalendarApp.getDefaultCalendar();
+</code></pre>
+<p>With this (change "Birthday Reminders" to your calendar name):</p>
 <pre><code class="language-javascript">const calendar = CalendarApp.getCalendarsByName(&quot;Birthday Reminders&quot;)[0];
 </code></pre>
 <hr />
-<h3 id="e-use-a-column-to-filter-who-gets-reminders">E. Use a Column to Filter Who Gets Reminders</h3>
-<p>Add a <code>"Yes"</code> column and filter with:</p>
+<h3 id="option-e-only-create-reminders-for-certain-people">Option E: Only Create Reminders for Certain People</h3>
+<p>Add a third column called "Create Reminder" in your spreadsheet with "Yes" or "No" for each person. Then add this code to filter:</p>
 <pre><code class="language-javascript">const flag = data[i][2];
 if (!name || !rawDate || flag !== &quot;Yes&quot;) continue;
 </code></pre>
 <hr />
-<h3 id="f-change-the-reminder-titles">F. Change the Reminder Titles</h3>
+<h3 id="option-f-change-the-reminder-text">Option F: Change the Reminder Text</h3>
+<p>Find this line and modify the text:</p>
 <pre><code class="language-javascript">const title = `🎉 ${reminder.label} ${name}'s birthday`;
 </code></pre>
-<p>Modify as needed, e.g., remove emoji, add year, etc.</p>
-<hr />
-<h3 id="tip-test-with-one-row">Tip: Test With One Row</h3>
-<pre><code class="language-javascript">for (let i = 1; i &lt; 2; i++) { // Only run on row 2
+<p>For example, to remove the emoji:</p>
+<pre><code class="language-javascript">const title = `${reminder.label} ${name}'s birthday`;
 </code></pre>
+<hr />
+<h3 id="testing-tip-start-with-just-one-person">Testing Tip: Start with Just One Person</h3>
+<p>To test your changes, you can make the code only process the first person in your list. Change this line:</p>
+<pre><code class="language-javascript">for (let i = 1; i &lt; data.length; i++) {
+</code></pre>
+<p>To this:</p>
+<pre><code class="language-javascript">for (let i = 1; i &lt; 2; i++) { // Only processes row 2 (first person)
+</code></pre>
+<p>Remember to change it back when you're ready to process everyone!</p>
               
             </div>
           </div><footer>

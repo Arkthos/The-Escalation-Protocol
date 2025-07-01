@@ -149,7 +149,13 @@
               
                 <h1 id="alert-tuning-comprehensive-guide-advanced-edition">Alert Tuning – Comprehensive Guide (Advanced Edition)</h1>
 <h2 id="1-purpose-audience">📘 1. Purpose &amp; Audience</h2>
-<p>This guide is designed for those with foundational experience in Microsoft Defender XDR alert tuning looking to step up their game. It builds on the <strong>Beginner Edition</strong>, expanding into advanced rule logic, strategic tuning practices, and operational governance. The aim is to bridge the gap between familiarity and expertise—helping professionals design rules that are not only effective, but also scalable, auditable, and resilient in real-world security operations.</p>
+<p>Th#### Let's see it in action:</p>
+<p>![Graphic representation of alert tuning logic using nested logic🗃 <strong>6. Retire Rule</strong>:</p>
+<ul>
+<li>If rule is no longer needed (e.g., tool decommissioned), deactivate or delete</li>
+</ul>
+<p>📌 At any stage, if behavior changes or false positives emerge, loop back to "Build &amp; Resolve" for refinement.</p>
+<p><img alt="Flowchart describing the life cycle states of a tuning rule" src="../../../../Wiki snapshots/Image%20(10).png" />ups. A parent group with an AND operator contains two sub-groups (also using AND logic). Sub-group 1 specifies FileName = EICAR-Test-File and SHA1 = 4206473fa51738e6d713b28fbb6dc28193a1d851. Sub-group 2 specifies FolderPath = C:\Users\adminboy\Desktop and DetectionSource = Antivirus. All conditions must be met for the alert rule to trigger.](../../../../Wiki snapshots/Image%20(9).png) guide is designed for those with foundational experience in Microsoft Defender XDR alert tuning looking to step up their game. It builds on the <strong>Beginner Edition</strong>, expanding into advanced rule logic, strategic tuning practices, and operational governance. The aim is to bridge the gap between familiarity and expertise—helping professionals design rules that are not only effective, but also scalable, auditable, and resilient in real-world security operations.</p>
 <h3 id="11-building-on-the-basics">🧱 1.1 Building on the Basics</h3>
 <p>Already comfortable with basic tuning using "Resolve" and "Hide"? This guide will help you:</p>
 <ul>
