@@ -1,0 +1,74 @@
+/* Ensure sidebar stays dark and legible */
+.wy-nav-side {
+  background: #1f1f1f;
+}
+
+/* Sidebar section headers */
+.wy-menu-vertical header,
+.wy-menu-vertical .caption {
+  color: #4ca3dd;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0.6em 1em 0.2em;
+}
+
+/* Sidebar links */
+.wy-menu-vertical a {
+  color: #e0e0e0;
+}
+
+.wy-menu-vertical a:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* Active page link */
+.wy-menu-vertical .current > a {
+  background-color: #0056b3;
+  color: white;
+}
+
+/* Subitems */
+.wy-menu-vertical ul {
+  background: #2a2a2a;
+}
+
+.wy-menu-vertical li.toctree-l2 > a,
+.wy-menu-vertical li.toctree-l3 > a {
+  font-size: 0.82rem;
+  padding-left: 2em;
+  color: #d0d0d0;
+}
+
+/* Expand/Collapse icons visible */
+.wy-menu-vertical .toctree-expand {
+  filter: invert(1);
+}
+/* Improve contrast of in-page headers */
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+  color: #e6edf3 !important; /* Light and clear */
+  font-weight: 600;
+}
+/* Center the content and increase its width */
+.wy-nav-content {
+  max-width: 1200px;  /* Wider layout than default */
+  margin: 0 auto;     /* Center the content */
+  padding: 2rem;      /* Add some breathing room */
+}
+
+/* Prevent sidebar from being too wide */
+.wy-side-nav-search,
+.wy-nav-side {
+  width: 270px;
+}
+
+/* Shift the main content left to reclaim space */
+.wy-nav-content-wrap {
+  margin-left: 270px;
+}
