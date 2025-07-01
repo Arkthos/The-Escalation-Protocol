@@ -4,19 +4,16 @@
 Never forget a birthday again! This guide shows you how to automatically create birthday reminders in your Google Calendar using a simple Google Sheet. 
 
 **What this does:**
+
 - Creates 3 automatic reminders for each birthday:
   - 1 month before
-
   - 1 week before  
-
   - 1 day before (labeled as "Tomorrow is...")
-
 - Reminders repeat every year for 30 years
-
 - Works with any number of birthdays
 
-
 **What you need:**
+
 - A Google account (free)
 - 15-20 minutes to set up
 - No programming experience required!
@@ -28,6 +25,7 @@ Never forget a birthday again! This guide shows you how to automatically create 
 First, we'll create a simple list of birthdays in Google Sheets.
 
 **Instructions:**
+
 1. Go to [sheets.google.com](https://sheets.google.com) and create a new spreadsheet
 2. In the first row, type these headers:
    - Cell A1: `Name`
@@ -40,6 +38,7 @@ First, we'll create a simple list of birthdays in Google Sheets.
 | Jeremy | 11/12/2025     |
 
 **Important notes:**
+
 - Use this year's date (not their birth year)
 - Use the MM/DD/YYYY format (month/day/year)
 - You can add as many people as you want
@@ -51,6 +50,7 @@ First, we'll create a simple list of birthdays in Google Sheets.
 Now we'll add some automated instructions (called a "script") to make the magic happen.
 
 **Instructions:**
+
 1. In your Google Sheet, click on `Extensions` in the top menu
 2. Click on `Apps Script` from the dropdown
 3. A new tab will open - this is Google's code editor
@@ -66,6 +66,7 @@ Now we'll add some automated instructions (called a "script") to make the magic 
 Copy and paste this "recipe" into the code editor you opened in Step 2.
 
 **Instructions:**
+
 1. Copy ALL the code below (click and drag to select, then Ctrl+C or Cmd+C)
 2. Go back to your Apps Script tab
 3. Paste it into the empty text box (Ctrl+V or Cmd+V)
@@ -140,6 +141,7 @@ function createCustomBirthdayReminders() {
 This recipe helps you delete old reminders if you make mistakes or want to start over.
 
 **Instructions:**
+
 1. Scroll down in your Apps Script editor
 2. Copy and paste this second recipe below the first one
 
@@ -283,6 +285,7 @@ const reminders = [
 ### Option C: Change How Many Years the Reminders Repeat
 
 Look for this part: `.times(30)` and change the number. For example:
+
 - `.times(10)` = reminders for 10 years
 - `.times(50)` = reminders for 50 years
 

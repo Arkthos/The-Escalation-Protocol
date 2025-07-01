@@ -165,36 +165,32 @@
               
                 <h1 id="automatic-birthday-reminders-for-google-calendar">Automatic Birthday Reminders for Google Calendar</h1>
 <p>Never forget a birthday again! This guide shows you how to automatically create birthday reminders in your Google Calendar using a simple Google Sheet. </p>
-<p><strong>What this does:</strong>
-- Creates 3 automatic reminders for each birthday:
-  - 1 month before</p>
+<p><strong>What this does:</strong></p>
 <ul>
-<li>
-<p>1 week before  </p>
-</li>
-<li>
-<p>1 day before (labeled as "Tomorrow is...")</p>
-</li>
-<li>
-<p>Reminders repeat every year for 30 years</p>
-</li>
-<li>
-<p>Works with any number of birthdays</p>
-</li>
+<li>Creates 3 automatic reminders for each birthday:</li>
+<li>1 month before</li>
+<li>1 week before  </li>
+<li>1 day before (labeled as "Tomorrow is...")</li>
+<li>Reminders repeat every year for 30 years</li>
+<li>Works with any number of birthdays</li>
 </ul>
-<p><strong>What you need:</strong>
-- A Google account (free)
-- 15-20 minutes to set up
-- No programming experience required!</p>
+<p><strong>What you need:</strong></p>
+<ul>
+<li>A Google account (free)</li>
+<li>15-20 minutes to set up</li>
+<li>No programming experience required!</li>
+</ul>
 <hr />
 <h2 id="step-1-create-your-birthday-list">Step 1: Create Your Birthday List</h2>
 <p>First, we'll create a simple list of birthdays in Google Sheets.</p>
-<p><strong>Instructions:</strong>
-1. Go to <a href="https://sheets.google.com">sheets.google.com</a> and create a new spreadsheet
-2. In the first row, type these headers:
-   - Cell A1: <code>Name</code>
-   - Cell B1: <code>Birthday</code>
-3. Add birthdays in the rows below like this:</p>
+<p><strong>Instructions:</strong></p>
+<ol>
+<li>Go to <a href="https://sheets.google.com">sheets.google.com</a> and create a new spreadsheet</li>
+<li>In the first row, type these headers:</li>
+<li>Cell A1: <code>Name</code></li>
+<li>Cell B1: <code>Birthday</code></li>
+<li>Add birthdays in the rows below like this:</li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -213,27 +209,33 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Important notes:</strong>
-- Use this year's date (not their birth year)
-- Use the MM/DD/YYYY format (month/day/year)
-- You can add as many people as you want</p>
+<p><strong>Important notes:</strong></p>
+<ul>
+<li>Use this year's date (not their birth year)</li>
+<li>Use the MM/DD/YYYY format (month/day/year)</li>
+<li>You can add as many people as you want</li>
+</ul>
 <hr />
 <h2 id="step-2-open-the-code-editor">Step 2: Open the Code Editor</h2>
 <p>Now we'll add some automated instructions (called a "script") to make the magic happen.</p>
-<p><strong>Instructions:</strong>
-1. In your Google Sheet, click on <code>Extensions</code> in the top menu
-2. Click on <code>Apps Script</code> from the dropdown
-3. A new tab will open - this is Google's code editor
-4. You'll see some sample code - delete everything in the big text box
-5. Leave this tab open - we'll use it in the next step</p>
+<p><strong>Instructions:</strong></p>
+<ol>
+<li>In your Google Sheet, click on <code>Extensions</code> in the top menu</li>
+<li>Click on <code>Apps Script</code> from the dropdown</li>
+<li>A new tab will open - this is Google's code editor</li>
+<li>You'll see some sample code - delete everything in the big text box</li>
+<li>Leave this tab open - we'll use it in the next step</li>
+</ol>
 <p><strong>Don't worry!</strong> You don't need to understand the code. Just think of it as a recipe that tells Google what to do.</p>
 <hr />
 <h2 id="step-3-add-the-birthday-reminder-recipe">Step 3: Add the Birthday Reminder Recipe</h2>
 <p>Copy and paste this "recipe" into the code editor you opened in Step 2.</p>
-<p><strong>Instructions:</strong>
-1. Copy ALL the code below (click and drag to select, then Ctrl+C or Cmd+C)
-2. Go back to your Apps Script tab
-3. Paste it into the empty text box (Ctrl+V or Cmd+V)</p>
+<p><strong>Instructions:</strong></p>
+<ol>
+<li>Copy ALL the code below (click and drag to select, then Ctrl+C or Cmd+C)</li>
+<li>Go back to your Apps Script tab</li>
+<li>Paste it into the empty text box (Ctrl+V or Cmd+V)</li>
+</ol>
 <p><strong>The Recipe (copy everything between the lines):</strong></p>
 <pre><code class="language-javascript">function createCustomBirthdayReminders() {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
@@ -297,9 +299,11 @@
 <hr />
 <h2 id="step-4-add-the-cleanup-recipe-optional-but-recommended">Step 4: Add the Cleanup Recipe (Optional but Recommended)</h2>
 <p>This recipe helps you delete old reminders if you make mistakes or want to start over.</p>
-<p><strong>Instructions:</strong>
-1. Scroll down in your Apps Script editor
-2. Copy and paste this second recipe below the first one</p>
+<p><strong>Instructions:</strong></p>
+<ol>
+<li>Scroll down in your Apps Script editor</li>
+<li>Copy and paste this second recipe below the first one</li>
+</ol>
 <p><strong>The Cleanup Recipe:</strong></p>
 <pre><code class="language-javascript">function deleteOldBirthdayEventSeries() {
   const calendar = CalendarApp.getDefaultCalendar();
@@ -417,9 +421,11 @@
 </code></pre>
 <hr />
 <h3 id="option-c-change-how-many-years-the-reminders-repeat">Option C: Change How Many Years the Reminders Repeat</h3>
-<p>Look for this part: <code>.times(30)</code> and change the number. For example:
-- <code>.times(10)</code> = reminders for 10 years
-- <code>.times(50)</code> = reminders for 50 years</p>
+<p>Look for this part: <code>.times(30)</code> and change the number. For example:</p>
+<ul>
+<li><code>.times(10)</code> = reminders for 10 years</li>
+<li><code>.times(50)</code> = reminders for 50 years</li>
+</ul>
 <hr />
 <h3 id="option-d-use-a-different-calendar">Option D: Use a Different Calendar</h3>
 <p>If you have multiple calendars, you can specify which one to use. Replace this line:</p>
