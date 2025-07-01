@@ -2,7 +2,15 @@
 
 ## 📘 1. Purpose & Audience
 
-This guide is designed for those with foundational experience in Microsoft Defender XDR alert tuning looking to step up their game. It builds on the **Beginner Edition**, expanding into advanced rule logic, strategic tuning practices, and operational governance. The aim is to bridge the gap between familiarity and expertise—helping professionals design rules that are not only effective, but also scalable, auditable, and resilient in real-world security operations.
+Th#### Let's see it in action:
+
+![Graphic representation of alert tuning logic using nested logic🗃 **6. Retire Rule**:
+
+- If rule is no longer needed (e.g., tool decommissioned), deactivate or delete
+
+📌 At any stage, if behavior changes or false positives emerge, loop back to "Build & Resolve" for refinement.
+
+![Flowchart describing the life cycle states of a tuning rule](../../../../Wiki snapshots/Image%20(10).png)ups. A parent group with an AND operator contains two sub-groups (also using AND logic). Sub-group 1 specifies FileName = EICAR-Test-File and SHA1 = 4206473fa51738e6d713b28fbb6dc28193a1d851. Sub-group 2 specifies FolderPath = C:\Users\adminboy\Desktop and DetectionSource = Antivirus. All conditions must be met for the alert rule to trigger.](../../../../Wiki snapshots/Image%20(9).png) guide is designed for those with foundational experience in Microsoft Defender XDR alert tuning looking to step up their game. It builds on the **Beginner Edition**, expanding into advanced rule logic, strategic tuning practices, and operational governance. The aim is to bridge the gap between familiarity and expertise—helping professionals design rules that are not only effective, but also scalable, auditable, and resilient in real-world security operations.
 
 ### 🧱 1.1 Building on the Basics
 
