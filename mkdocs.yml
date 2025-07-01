@@ -9,6 +9,8 @@ extra_css:
 - stylesheets/layout.css
 nav:
 - Home: index.md
+- Day-to-Day Stuff:
+  - Birthday Reminders: Day-to-Day Stuff/birthday-reminders.md
 - Defender for Endpoint:
   - Endpoint Detection and Response:
     - Alert Tunning:
