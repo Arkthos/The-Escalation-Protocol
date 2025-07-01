@@ -5,7 +5,8 @@ Never forget a birthday again! This guide shows you how to automatically create 
 
 **What this does:**
 
-- Creates 3 automatic reminders for each birthday:    
+- Creates 3 automatic reminders for each birthday:
+    
     - 1 month before  
     - 1 week before  
     - 1 day before (labeled as "Tomorrow is...")
