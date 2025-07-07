@@ -12,6 +12,7 @@ For official documentation on configuring your environment, including connectivi
 **Purpose:** Provides centralized control from the Microsoft Defender cloud to the endpoint client (Sense).
 
 **Payloads and Traffic:**
+
 - Heartbeat signals (WinATP traffic)
 - Sensor and OS version info
 - Remote command dispatching:
@@ -36,6 +37,7 @@ Blocking CNC traffic prevents remote security actions. For instance, you wouldnâ
 **Purpose:** Sends telemetry data and security event logs from the device to Microsoft Defenderâ€™s cloud backend.
 
 **Payloads and Events:**
+
 - Device and component versions (Defender AV, MOCAMP, engine, definitions)
 - Response action results (e.g., AV scan outcome, package collection success)
 - Raw telemetry: `DeviceInfoEvents`, `RegistryEvents`, `NetworkEvents`, `FileEvents`, etc.
@@ -57,6 +59,7 @@ Without telemetry, the device becomes invisible to SecOps teams. No alerts, inci
 **Purpose:** Supports Microsoft Defender Antivirus and Endpoint Detection and Response (EDR) cloud functionalities.
 
 **Key Services:**
+
 - Real-time cloud lookups for suspicious files
 - Custom indicators (hashes, IPs, URLs)
 - Network protection enforcement
@@ -76,11 +79,13 @@ Cloud-delivered protection is essential for detecting emerging threats and enfor
 Microsoft supports two connectivity models:
 
 ### Standard Connectivity:
+
 - Requires access to a broader range of domains and URLs.
 - Granular separation between features, updates, and telemetry paths.
 - Full-featured but complex to configure in restricted environments.
 
 ### Streamlined Connectivity:
+
 - Introduced for simpler firewall/proxy configurations.
 - Consolidates MDE services under fewer FQDNs like:
   - `*.endpoint.security.microsoft.com`

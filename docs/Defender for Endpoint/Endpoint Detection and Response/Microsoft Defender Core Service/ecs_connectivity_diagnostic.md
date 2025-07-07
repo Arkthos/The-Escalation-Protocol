@@ -227,11 +227,3 @@ If the script shows failures or abnormal output:
 
 ---
 
-## Version History
-
-| Version | Date       | Author       | Notes                      |
-| ------- | ---------- | ------------ | -------------------------- |
-| 1.0     | 2025-07-07 | Arkthos      | Initial script and article |
-
----
-
