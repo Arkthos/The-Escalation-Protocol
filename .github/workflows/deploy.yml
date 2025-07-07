@@ -31,5 +31,11 @@ jobs:
       - name: Create CNAME file
         run: echo "tep.cyberpax.cloud" > docs/CNAME
 
+      - name: List built site contents (debug)
+        run: |
+          mkdocs build
+          echo "🔍 Site files:"
+          ls -R site/
+
       - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force

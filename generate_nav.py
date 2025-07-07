@@ -1,8 +1,9 @@
 import os
 import yaml
+import subprocess
 
 DOCS_DIR = "docs"
-IGNORE_DIRS = {"stylesheets", "__pycache__","images"}
+IGNORE_DIRS = {"stylesheets", "__pycache__", "images"}
 IGNORE_FILES = {"_Sidebar.md", "index.md"}
 
 def collect_docs(path):
@@ -32,10 +33,12 @@ def build_mkdocs_config(nav):
 
     print("✅ Navigation updated in mkdocs.yml")
 
+def git_commit_and_push():
+    subprocess.run(["git", "add", "."], check=True)
+    subprocess.run(["git", "commit", "-m", "Auto-update nav, commit changes, trigger deploy"], check=False)
+    subprocess.run(["git", "push", "origin", "main"], check=True)
+
 if __name__ == "__main__":
     nav = collect_docs(DOCS_DIR)
     build_mkdocs_config(nav)
-    os.system("mkdocs build")
-    os.system("git add .")
-    os.system('git commit -m "Auto-update nav and build site"')
-    os.system("git push origin main")
+    git_commit_and_push()
