@@ -10,7 +10,8 @@ This article provides a PowerShell-based diagnostic approach to validate and cap
 
 **ECS (Endpoint Configuration Service)** is a Microsoft cloud service used by Windows Defender and Microsoft Defender for Endpoint (MDE) clients to retrieve configuration data such as feature flags, diagnostic settings, and platform behavior instructions. ECS URLs are dynamically assigned and can vary based on region, tenant, or client configuration.
 
-> [ECS documentation: (https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-core-service-overview)]
+> [ECS documentation](https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-core-service-overview)
+
 
 ---
 

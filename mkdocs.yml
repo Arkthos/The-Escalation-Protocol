@@ -9,8 +9,6 @@ extra_css:
 - stylesheets/layout.css
 nav:
 - Home: index.md
-- Day-to-Day Stuff:
-  - Birthday Reminders: Day-to-Day Stuff/birthday-reminders.md
 - Defender for Endpoint:
   - Endpoint Detection and Response:
     - Alert Tunning:
@@ -35,11 +33,13 @@ nav:
     - Threat Vulnerability Management:
       - Troubleshooting Guide (Tsg) Cve‐2023‐49210 – Openssl Vulnerability In Node‐Openssl Npm Package: Defender
           for Endpoint/Endpoint Detection and Response/Threat Vulnerability Management/Troubleshooting-Guide-(TSG)-CVE‐2023‐49210-–-OpenSSL-Vulnerability-in-node‐openssl-NPM-Package.md
+- Support Tips and Tools:
+  - Effective Case Notation Good Practices And Template: Support Tips and Tools/Effective-Case-Notation-Good-practices-and-template.md
+  - How To Craft An Effective Root Cause Analysis (Rca): Support Tips and Tools/How-to-Craft-an-Effective-Root-Cause-Analysis-(RCA).md
 - Derecho informático:
   - Delitos Informáticos En Costa Rica Mapeo Jurídico‐Técnico Y Controles Att&Ck: Derecho
       informático/Delitos-Informáticos-en-Costa-Rica-Mapeo-Jurídico‐Técnico-y-Controles-ATT&CK.md
   - Reflexión, Bienes Jurídicos Tutelados En Una Eventual Legislación De Ia En Costa Rica: Derecho
       informático/Reflexión,-Bienes-jurídicos-tutelados-en-una-eventual-legislación-de-IA-en-Costa-Rica.md
-- Support Tips and Tools:
-  - Effective Case Notation Good Practices And Template: Support Tips and Tools/Effective-Case-Notation-Good-practices-and-template.md
-  - How To Craft An Effective Root Cause Analysis (Rca): Support Tips and Tools/How-to-Craft-an-Effective-Root-Cause-Analysis-(RCA).md
+- Day-to-Day Stuff:
+  - Birthday Reminders: Day-to-Day Stuff/birthday-reminders.md
