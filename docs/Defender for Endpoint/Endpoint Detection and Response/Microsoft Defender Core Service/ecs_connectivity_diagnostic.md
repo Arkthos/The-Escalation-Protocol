@@ -231,7 +231,7 @@ If the script shows failures or abnormal output:
 
 | Version | Date       | Author       | Notes                      |
 | ------- | ---------- | ------------ | -------------------------- |
-| 1.0     | 2025-07-07 | Support Team | Initial script and article |
+| 1.0     | 2025-07-07 | Arkthos      | Initial script and article |
 
 ---
 
