@@ -6,7 +6,7 @@ DOCS_DIR = "docs"
 IGNORE_DIRS = {"stylesheets", "__pycache__", "images"}
 IGNORE_FILES = {"_Sidebar.md", "index.md"}
 
-# Custom top-level order
+# Priority nav order (custom)
 PRIORITY_ORDER = [
     "Defender for Endpoint",
     "Support Tips and Tools",
@@ -56,26 +56,24 @@ def build_mkdocs_config(nav):
     with open(config_path, "w", encoding="utf-8") as f:
         yaml.dump(config, f, sort_keys=False, allow_unicode=True)
 
-    print("✅ Navigation updated in mkdocs.yml")
+    print("✅ mkdocs.yml navigation updated.")
 
 def git_commit_and_push():
-    # Check for any changes (staged or not)
+    # Check if anything changed
     result = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True)
     if result.stdout.strip() == "":
         print("⚠️  No changes to commit.")
         return
 
-    print("📦 Staging and committing changes...")
+    print("📦 Committing and pushing changes...")
     subprocess.run(["git", "add", "."], check=True)
-    subprocess.run(["git", "commit", "-m", "Auto-update nav and content"], check=False)
+    subprocess.run(["git", "commit", "-m", "Auto-update: nav, content, or metadata"], check=False)
     subprocess.run(["git", "push", "origin", "main"], check=True)
-    print("✅ Git commit and push completed.")
+    print("✅ Changes pushed to main. GitHub Pages will redeploy shortly.")
 
 if __name__ == "__main__":
-    print("📁 Collecting docs...")
+    print("📁 Collecting docs and rebuilding nav...")
     nav = collect_docs(DOCS_DIR)
 
-    print("🧭 Building mkdocs.yml...")
     build_mkdocs_config(nav)
-
     git_commit_and_push()
