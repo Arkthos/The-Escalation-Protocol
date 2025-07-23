@@ -55,6 +55,8 @@ Make emphasis on:
 ---
 
 # Current Status
+- **Status:** 
+  A sentence describing the current state of the case, like what's holding progress or what we are waiting for.
 
 - **Alternate contact:**  
   Ensures case continuity when the primary contact is unavailable.
@@ -163,6 +165,7 @@ At closure, clean up this section to include only steps that led to resolution â
 
 > # Current Status
 
+> - 
 > - Alternate contact:
 > - Age 7 days justification:
 > - Age 14 days justification:
