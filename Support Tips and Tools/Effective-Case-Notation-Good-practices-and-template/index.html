@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Effective Case Notation Good Practices And Template - The Escalation Protocol</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../stylesheets/nav.css" rel="stylesheet" />
+        <link href="../../stylesheets/layout.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Effective Case Notation Good Practices And Template";
+        var mkdocs_page_input_path = "Support Tips and Tools/Effective-Case-Notation-Good-practices-and-template.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> The Escalation Protocol
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Defender for Endpoint</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" >Endpoint Detection and Response</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" >Alert Tunning</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Defender%20for%20Endpoint/Endpoint%20Detection%20and%20Response/Alert%20Tunning/Alert-Tuning-Quick%E2%80%90Start-Guide-%28Beginner-Edition%29/">Alert Tuning Quick‐Start Guide (Beginner Edition)</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Defender%20for%20Endpoint/Endpoint%20Detection%20and%20Response/Alert%20Tunning/Alert-Tuning-%E2%80%93-Comprehensive-Guide-%28Advanced-Edition%29/">Alert Tuning – Comprehensive Guide (Advanced Edition)</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Device Control</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Defender%20for%20Endpoint/Endpoint%20Detection%20and%20Response/Device%20Control/How-to-Configure-Device-Control-on-macOS%2C-Use-case-1.-Deny-write-access-to-all-USB-storage-except-for-specific-VendorID-and-ProductID-combinations-%28Jamf%29/">How To Configure Device Control On Macos, Use Case 1. Deny Write Access To All Usb Storage Except For Specific Vendorid And Productid Combinations (Jamf)</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Defender%20for%20Endpoint/Endpoint%20Detection%20and%20Response/Device%20Control/Using-the-device-control-policy-sample-builder/">Using The Device Control Policy Sample Builder</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >ECS</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Defender%20for%20Endpoint/Endpoint%20Detection%20and%20Response/ECS/How%20to%20Manually%20Test%20MDE%E2%80%99s%20ECS%20Networking/">How To Manually Test Mde’S Ecs Networking</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Defender%20for%20Endpoint/Endpoint%20Detection%20and%20Response/mde_connectivity_channels/">Mde Connectivity Channels</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Microsoft Defender Core Service</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Defender%20for%20Endpoint/Endpoint%20Detection%20and%20Response/Microsoft%20Defender%20Core%20Service/ecs_connectivity_diagnostic/">Ecs Connectivity Diagnostic</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Tags</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Defender%20for%20Endpoint/Endpoint%20Detection%20and%20Response/Tags/Data-Driven%20Tags%20%E2%80%93%20Disabled%20and%20Isolated%20in%20Microsoft%20Defender%20for%20Endpoint/">Data Driven Tags – Disabled And Isolated In Microsoft Defender For Endpoint</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Threat Vulnerability Management</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Defender%20for%20Endpoint/Endpoint%20Detection%20and%20Response/Threat%20Vulnerability%20Management/Troubleshooting-Guide-%28TSG%29-CVE%E2%80%902023%E2%80%9049210-%E2%80%93-OpenSSL-Vulnerability-in-node%E2%80%90openssl-NPM-Package/">Troubleshooting Guide (Tsg) Cve‐2023‐49210 – Openssl Vulnerability In Node‐Openssl Npm Package</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Support Tips and Tools</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Effective Case Notation Good Practices And Template</a>
+    <ul class="current">
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../How-to-Craft-an-Effective-Root-Cause-Analysis-%28RCA%29/">How To Craft An Effective Root Cause Analysis (Rca)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Derecho informático</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Derecho%20inform%C3%A1tico/Delitos-Inform%C3%A1ticos-en-Costa-Rica-Mapeo-Jur%C3%ADdico%E2%80%90T%C3%A9cnico-y-Controles-ATT%26CK/">Delitos Informáticos En Costa Rica Mapeo Jurídico‐Técnico Y Controles Att&Ck</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Derecho%20inform%C3%A1tico/Reflexi%C3%B3n%2C-Bienes-jur%C3%ADdicos-tutelados-en-una-eventual-legislaci%C3%B3n-de-IA-en-Costa-Rica/">Reflexión, Bienes Jurídicos Tutelados En Una Eventual Legislación De Ia En Costa Rica</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Day-to-Day Stuff</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Day-to-Day%20Stuff/birthday-reminders/">Birthday Reminders</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">The Escalation Protocol</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Support Tips and Tools</li>
+      <li class="breadcrumb-item active">Effective Case Notation Good Practices And Template</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="effective-case-notation-good-practices-and-template">Effective Case Notation - Good practices and Template</h1>
+<p>This template was originally designed for handling Microsoft Defender for Endpoint (MDE) support cases, but its principles are broadly applicable across nearly any technical support scenario. It combines the strengths of several well-established methodologies to create a structured, flexible, and highly effective approach to documenting and resolving issues:</p>
+<ul>
+<li>
+<p><strong>KCS (Knowledge-Centered Service):</strong><br />
+  Promotes documenting issues as they are solved, fostering a culture of continuous learning and ensuring that knowledge is easily shareable and reusable.</p>
+</li>
+<li>
+<p><strong>ITIL (Information Technology Infrastructure Library):</strong><br />
+  Provides a process-oriented foundation, especially around incident and problem management, helping to ensure consistency and alignment with service delivery standards.</p>
+</li>
+<li>
+<p><strong>Kepner-Tregoe Problem Solving:</strong><br />
+  Brings a disciplined and analytical approach to identifying root causes, assessing options, and taking clear, logical action — essential for high-stakes or ambiguous issues.</p>
+</li>
+<li>
+<p><strong>CompTIA Best Practices:</strong><br />
+  Embeds vendor-neutral, industry-aligned technical support standards that ensure clarity, professionalism, and effective communication throughout the case lifecycle.</p>
+</li>
+</ul>
+<hr />
+<p>📌 <strong>Why use this template?</strong><br />
+This structure has been tested in fast-paced, high-impact support environments. It ensures that key information isn’t lost, context is preserved, and collaboration across teams (Support, Devs, Account teams, or the customer themselves) is seamless. Whether you're resolving an endpoint issue or troubleshooting cloud architecture, this format scales with complexity while maintaining clarity.</p>
+<p>By using this template, you can expect:
+- Higher customer satisfaction (CSAT)
+- Fewer escalations due to miscommunication or incomplete notes
+- More consistent and actionable case documentation
+- Easier transitions between engineers or teams</p>
+<p>What follows is a breakdown of each section of the case note, complete with context and rationale to help you apply it thoughtfully and effectively.</p>
+<hr />
+<h1 id="issue-description">Issue Description</h1>
+<p>Be as detailed as possible. Use tools like <strong>screenshots</strong>, <strong>Teams recordings</strong>, <strong>Problem Steps Recorder (PSR)</strong>, and any other relevant media to support your findings.</p>
+<blockquote>
+<p>💡 <em>Why this matters:</em> Issues are often complex and nuanced — visual or audio context can reveal critical insights that text cannot. This helps both in reproducing the problem and when collaborating with other engineers or escalating to higher tiers of support.</p>
+</blockquote>
+<p>Make emphasis on:</p>
+<ul>
+<li>
+<p><strong>Customer's goal or need (not the symptom):</strong><br />
+  Aligns troubleshooting with the actual outcome the customer expects.</p>
+</li>
+<li>
+<p><strong>Customer’s steps toward the goal:</strong><br />
+  Helps identify gaps or errors and avoids duplication of effort.</p>
+</li>
+<li>
+<p><strong>Expected vs. actual outcome:</strong><br />
+  Clarifies the deviation and sets the stage for root cause investigation.</p>
+</li>
+<li>
+<p><strong>Helpful guiding questions:</strong>  </p>
+</li>
+<li>What is the problem?</li>
+<li>Where is it occurring?</li>
+<li>When and how often?</li>
+<li>What’s the impact (scope/magnitude)?</li>
+<li>Are there any recent changes or relevant environment details?</li>
+</ul>
+<hr />
+<h1 id="current-status">Current Status</h1>
+<ul>
+<li>
+<p><strong>Status:</strong> 
+  A sentence describing the current state of the case, like what's holding progress or what we are waiting for.</p>
+</li>
+<li>
+<p><strong>Alternate contact:</strong><br />
+  Ensures case continuity when the primary contact is unavailable.</p>
+</li>
+<li>
+<p><strong>Age bucket justification:</strong><br />
+  Justify why the case has aged, especially if it's older than expected (7+ or 14+ days), to prevent escalations or misinterpretation.</p>
+</li>
+</ul>
+<hr />
+<h1 id="environmental-details-examples-from-the-mde-context-adjust-as-needed">Environmental Details (Examples from the MDE Context, adjust as needed)</h1>
+<p>Provides context that helps with scoping and matching the issue to known limitations or product behaviors.</p>
+<h2 id="organization-details">Organization Details:</h2>
+<ul>
+<li>OrgId  </li>
+<li>TenantID  </li>
+</ul>
+<h2 id="device-details">Device Details:</h2>
+<ul>
+<li>DeviceID  </li>
+<li>Device Name  </li>
+<li>Operating System  </li>
+<li>Device Management (e.g., Intune, Co-management, GPO, SCCM Jamf)</li>
+</ul>
+<hr />
+<h2 id="cause">Cause</h2>
+<p>Clearly distinguish:</p>
+<ul>
+<li>
+<p><strong>Possible causes:</strong><br />
+  All potential root causes based on symptoms or environmental clues.</p>
+</li>
+<li>
+<p><strong>Confirmed cause:</strong><br />
+  Validated through data, replication, logs, or authoritative input (e.g., PG or SME).</p>
+</li>
+</ul>
+<blockquote>
+<p>💡 <em>Why this matters:</em> Keeps reasoning transparent and helps avoid tunnel vision or jumping to conclusions.</p>
+</blockquote>
+<hr />
+<h1 id="actions-taken">Actions Taken</h1>
+<p>A running log of every meaningful step taken — diagnostic, testing, and remediation.</p>
+<blockquote>
+<p>💡 <em>Why this matters:</em> Acts as an audit trail for future reference, handoffs, or escalations. Helps others quickly understand what’s been tried and why.</p>
+</blockquote>
+<hr />
+<h1 id="action-plan">Action Plan</h1>
+<p>Details the upcoming steps and assigns ownership and timelines.</p>
+<ul>
+<li>Who is doing what and by when?</li>
+<li>Are there blockers?</li>
+<li>Is the customer expected to perform an action?</li>
+</ul>
+<blockquote>
+<p>💡 <em>Why this matters:</em> Keeps all stakeholders aligned and prevents drift or delay in case progression.</p>
+</blockquote>
+<hr />
+<h1 id="resolution-content-creation">Resolution &amp; Content Creation</h1>
+<h2 id="resolution-steps">Resolution Steps:</h2>
+<p>At closure, clean up this section to include only steps that led to resolution — from identifying the true cause to applying the fix.</p>
+<blockquote>
+<p>💡 <em>Why this matters:</em> Provides clarity for postmortem reviews and simplifies future case comparisons.</p>
+</blockquote>
+<h2 id="articles-used-created-or-updated">Articles Used, Created, or Updated:</h2>
+<ul>
+<li>Include KBs, WIPs, or internal/external docs referenced or authored as part of solving the case.</li>
+</ul>
+<blockquote>
+<p>💡 <em>Why this matters:</em> Ties incident resolution into a broader learning loop and supports KCS documentation goals.</p>
+</blockquote>
+<hr />
+<h1 id="next-contact">Next Contact</h1>
+<ul>
+<li>
+<p><strong>Next Action Pending On:</strong><br />
+  Clarifies which team or party is expected to act next and what that action is.</p>
+</li>
+<li>
+<p><strong>Scheduled Follow-Up:</strong><br />
+  Specifies the exact date/time for the next engagement or status check.</p>
+</li>
+</ul>
+<blockquote>
+<p>💡 <em>Why this matters:</em> Reduces uncertainty and helps track ownership of ongoing steps.</p>
+</blockquote>
+<hr />
+<h1 id="ready-to-use-template">Ready to use template</h1>
+<blockquote>
+<h1 id="issue-description_1">Issue Description</h1>
+<ul>
+<li>Customer goal or need:</li>
+<li>Steps taken by the customer:</li>
+<li>Expected outcome:</li>
+<li>Actual outcome:</li>
+<li>
+<p>Additional context (e.g., screenshots, logs, recordings):</p>
+</li>
+<li>
+<p>What is the problem?</p>
+</li>
+<li>Where is it occurring?</li>
+<li>When and how often?</li>
+<li>What is the extent/impact?</li>
+<li>Environmental details (dates, changes, versions, etc.):</li>
+</ul>
+<hr />
+<h1 id="current-status_1">Current Status</h1>
+<ul>
+<li></li>
+<li>Alternate contact:</li>
+<li>Age 7 days justification:</li>
+<li>Age 14 days justification:</li>
+</ul>
+<hr />
+<h1 id="environmental-details">Environmental Details</h1>
+<h2 id="organization-details_1">Organization Details:</h2>
+<ul>
+<li>OrgId:</li>
+<li>TenantID:</li>
+</ul>
+<h2 id="device-details_1">Device Details:</h2>
+<ul>
+<li>DeviceID:</li>
+<li>Device name:</li>
+<li>Operating system:</li>
+<li>Device Management:</li>
+</ul>
+<hr />
+<h1 id="cause_1">Cause</h1>
+<ul>
+<li>Possible causes:</li>
+<li>Confirmed cause:</li>
+</ul>
+<hr />
+<h1 id="actions-taken_1">Actions Taken</h1>
+<ul>
+<li></li>
+</ul>
+<hr />
+<h1 id="action-plan_1">Action Plan</h1>
+<ul>
+<li></li>
+</ul>
+<hr />
+<h1 id="resolution-content-creation_1">Resolution &amp; Content Creation</h1>
+<h2 id="resolution-steps_1">Resolution Steps:</h2>
+<ul>
+<li></li>
+</ul>
+<h2 id="articles-used-created-or-updated_1">Articles Used, Created, or Updated:</h2>
+<ul>
+<li></li>
+</ul>
+<hr />
+<h1 id="next-contact_1">Next Contact</h1>
+<ul>
+<li>Next Action Pending On:</li>
+<li>Scheduled Follow-Up:</li>
+</ul>
+</blockquote>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../Defender%20for%20Endpoint/Endpoint%20Detection%20and%20Response/Threat%20Vulnerability%20Management/Troubleshooting-Guide-%28TSG%29-CVE%E2%80%902023%E2%80%9049210-%E2%80%93-OpenSSL-Vulnerability-in-node%E2%80%90openssl-NPM-Package/" class="btn btn-neutral float-left" title="Troubleshooting Guide (Tsg) Cve‐2023‐49210 – Openssl Vulnerability In Node‐Openssl Npm Package"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../How-to-Craft-an-Effective-Root-Cause-Analysis-%28RCA%29/" class="btn btn-neutral float-right" title="How To Craft An Effective Root Cause Analysis (Rca)">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Defender%20for%20Endpoint/Endpoint%20Detection%20and%20Response/Threat%20Vulnerability%20Management/Troubleshooting-Guide-%28TSG%29-CVE%E2%80%902023%E2%80%9049210-%E2%80%93-OpenSSL-Vulnerability-in-node%E2%80%90openssl-NPM-Package/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../How-to-Craft-an-Effective-Root-Cause-Analysis-%28RCA%29/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

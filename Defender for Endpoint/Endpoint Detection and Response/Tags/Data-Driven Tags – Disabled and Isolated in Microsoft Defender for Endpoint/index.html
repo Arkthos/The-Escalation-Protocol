@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Data Driven Tags – Disabled And Isolated In Microsoft Defender For Endpoint - The Escalation Protocol</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../../stylesheets/nav.css" rel="stylesheet" />
+        <link href="../../../../stylesheets/layout.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Data Driven Tags \u2013 Disabled And Isolated In Microsoft Defender For Endpoint";
+        var mkdocs_page_input_path = "Defender for Endpoint/Endpoint Detection and Response/Tags/Data-Driven Tags \u2013 Disabled and Isolated in Microsoft Defender for Endpoint.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> The Escalation Protocol
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Defender for Endpoint</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Endpoint Detection and Response</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" >Alert Tunning</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Alert%20Tunning/Alert-Tuning-Quick%E2%80%90Start-Guide-%28Beginner-Edition%29/">Alert Tuning Quick‐Start Guide (Beginner Edition)</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Alert%20Tunning/Alert-Tuning-%E2%80%93-Comprehensive-Guide-%28Advanced-Edition%29/">Alert Tuning – Comprehensive Guide (Advanced Edition)</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Device Control</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Device%20Control/How-to-Configure-Device-Control-on-macOS%2C-Use-case-1.-Deny-write-access-to-all-USB-storage-except-for-specific-VendorID-and-ProductID-combinations-%28Jamf%29/">How To Configure Device Control On Macos, Use Case 1. Deny Write Access To All Usb Storage Except For Specific Vendorid And Productid Combinations (Jamf)</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Device%20Control/Using-the-device-control-policy-sample-builder/">Using The Device Control Policy Sample Builder</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >ECS</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../ECS/How%20to%20Manually%20Test%20MDE%E2%80%99s%20ECS%20Networking/">How To Manually Test Mde’S Ecs Networking</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mde_connectivity_channels/">Mde Connectivity Channels</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Microsoft Defender Core Service</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Microsoft%20Defender%20Core%20Service/ecs_connectivity_diagnostic/">Ecs Connectivity Diagnostic</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" >Tags</a>
+    <ul class="current">
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">Data Driven Tags – Disabled And Isolated In Microsoft Defender For Endpoint</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#problem">Problem</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#environment">Environment</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#root-cause">Root Cause</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#resolution">Resolution</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#recommendation">Recommendation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#next-steps">Next Steps</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Threat Vulnerability Management</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Threat%20Vulnerability%20Management/Troubleshooting-Guide-%28TSG%29-CVE%E2%80%902023%E2%80%9049210-%E2%80%93-OpenSSL-Vulnerability-in-node%E2%80%90openssl-NPM-Package/">Troubleshooting Guide (Tsg) Cve‐2023‐49210 – Openssl Vulnerability In Node‐Openssl Npm Package</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Support Tips and Tools</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Support%20Tips%20and%20Tools/Effective-Case-Notation-Good-practices-and-template/">Effective Case Notation Good Practices And Template</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Support%20Tips%20and%20Tools/How-to-Craft-an-Effective-Root-Cause-Analysis-%28RCA%29/">How To Craft An Effective Root Cause Analysis (Rca)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Derecho informático</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Derecho%20inform%C3%A1tico/Delitos-Inform%C3%A1ticos-en-Costa-Rica-Mapeo-Jur%C3%ADdico%E2%80%90T%C3%A9cnico-y-Controles-ATT%26CK/">Delitos Informáticos En Costa Rica Mapeo Jurídico‐Técnico Y Controles Att&Ck</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Derecho%20inform%C3%A1tico/Reflexi%C3%B3n%2C-Bienes-jur%C3%ADdicos-tutelados-en-una-eventual-legislaci%C3%B3n-de-IA-en-Costa-Rica/">Reflexión, Bienes Jurídicos Tutelados En Una Eventual Legislación De Ia En Costa Rica</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Day-to-Day Stuff</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Day-to-Day%20Stuff/birthday-reminders/">Birthday Reminders</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">The Escalation Protocol</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Defender for Endpoint</li>
+          <li class="breadcrumb-item">Endpoint Detection and Response</li>
+          <li class="breadcrumb-item">Tags</li>
+      <li class="breadcrumb-item active">Data Driven Tags – Disabled And Isolated In Microsoft Defender For Endpoint</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="data-driven-tags-disabled-and-isolated-in-microsoft-defender-for-endpoint">Data-Driven Tags – Disabled and Isolated in Microsoft Defender for Endpoint</h1>
+<h2 id="summary">Summary</h2>
+<p>This article provides detailed technical insights into the behavior and detection of data-driven tags—specifically the <code>Disabled</code> and <code>Isolated</code> tags—in Microsoft Defender for Endpoint (MDE). These tags are not directly stored in standard data tables but are inferred from system signals and logic, which may cause confusion for security teams attempting to audit or automate actions based on them.</p>
+<p><img alt="Device Tags UI" src="../74543049-a1dc-4848-b0cc-2431d92fc9ea.png" />
+<em>Tags such as "Disabled" and "Sensitive" shown in the MDE portal</em></p>
+<h2 id="problem">Problem</h2>
+<p>Tags such as <code>Disabled</code> and <code>Isolated</code> appear in the Microsoft Defender XDR portal, but they are not queryable via standard tables such as <code>DeviceInfo</code> in Microsoft Defender for Endpoint. This limitation complicates data discovery, reporting, and automation efforts.</p>
+<h2 id="environment">Environment</h2>
+<ul>
+<li>Microsoft Defender for Endpoint (MDE)</li>
+<li>Microsoft Defender for Identity (MDI)</li>
+<li>Microsoft Sentinel</li>
+<li>Kusto Query Language (KQL)</li>
+</ul>
+<h2 id="root-cause">Root Cause</h2>
+<p>These tags are <strong>not static fields</strong> in the MDE schema. They are derived from specific <strong>system conditions and backend logic</strong>:</p>
+<ul>
+<li>The <code>Disabled</code> tag is triggered when MDI detects that a computer account has been disabled in Active Directory.</li>
+<li>The <code>Isolated</code> tag is applied when a device is placed in network isolation by MDE.</li>
+</ul>
+<p>These behaviors are <strong>expected and by design</strong>.</p>
+<h2 id="resolution">Resolution</h2>
+<h3 id="querying-for-disabled-accounts-mdi-related">🔍 Querying for Disabled Accounts (MDI Related)</h3>
+<p>While the <code>Disabled</code> tag does not appear in MDE data tables, related conditions <strong>can be inferred</strong> from MDI data using KQL in Microsoft Sentinel or the M365 Defender advanced hunting portal.</p>
+<p><img alt="AD Computer Object Disabled" src="../e24b8794-e42f-49d2-9b30-712a5ffc5a57.png" />
+<em>Device status in Active Directory showing disabled state</em></p>
+<h4 id="sample-queries">Sample Queries:</h4>
+<pre><code class="language-kql">IdentityDirectoryEvents
+| where ActionType == &quot;AccountDisabledChanged&quot;
+| project Timestamp, TargetAccountUpn, TargetDeviceName
+</code></pre>
+<pre><code class="language-kql">IdentityInfo
+| where IsAccountEnabled == false
+| project AccountName, AccountDomain, Timestamp
+</code></pre>
+<blockquote>
+<p>These queries help identify accounts that have been disabled, likely triggering the <code>Disabled</code> tag in the portal.</p>
+</blockquote>
+<h3 id="understanding-the-isolated-tag-mde-related">🔍 Understanding the Isolated Tag (MDE Related)</h3>
+<p>The <code>Isolated</code> tag reflects device isolation status. It is not a column in the <code>DeviceInfo</code> table, but isolation actions <strong>can be tracked via mitigation data</strong>.</p>
+<p><img alt="KQL Query for Isolation" src="../89eb76b0-7e0e-4de6-ad6a-b55d3956074a.png" />
+<em>Query to detect isolated devices based on mitigation status</em></p>
+<h4 id="example-query">Example Query:</h4>
+<pre><code class="language-kql">DeviceInfo
+| where MitigationStatus == '{&quot;Isolated&quot;:&quot;true&quot;}'
+| project Timestamp, DeviceName, MitigationStatus
+</code></pre>
+<p><img alt="Device Isolation Status in UI" src="../9203fc2d-67d2-406f-b936-1765512c2a2b.png" />
+<em>Devices listed with "Isolated" status in the portal</em></p>
+<blockquote>
+<p>This approach retrieves devices currently marked as isolated, correlating with the tag shown in the portal.</p>
+</blockquote>
+<h2 id="recommendation">Recommendation</h2>
+<p>When working with <strong>data-driven tags</strong>, focus on identifying the <strong>triggering condition</strong> rather than searching for the tag itself in the data. These tags behave more like <strong>dynamic signals or triggers</strong>, not stored attributes.</p>
+<h3 id="key-takeaways">Key Takeaways:</h3>
+<ul>
+<li>Tags may <strong>not correlate</strong> to a specific schema field.</li>
+<li>Use contextual queries to infer the state behind the tag.</li>
+<li><code>Isolated</code> and <code>Disabled</code> are confirmed data-driven tags behaving as logic-based signals.</li>
+<li>Collaboration with the MDI support team may be necessary for advanced scenarios.</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<p>If the environment involves both MDI and MDE, and further clarification is required regarding data correlation or tag origins, it's recommended to <strong>escalate to MDI support</strong> for authoritative insights and internal documentation.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../Microsoft%20Defender%20Core%20Service/ecs_connectivity_diagnostic/" class="btn btn-neutral float-left" title="Ecs Connectivity Diagnostic"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Threat%20Vulnerability%20Management/Troubleshooting-Guide-%28TSG%29-CVE%E2%80%902023%E2%80%9049210-%E2%80%93-OpenSSL-Vulnerability-in-node%E2%80%90openssl-NPM-Package/" class="btn btn-neutral float-right" title="Troubleshooting Guide (Tsg) Cve‐2023‐49210 – Openssl Vulnerability In Node‐Openssl Npm Package">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../Microsoft%20Defender%20Core%20Service/ecs_connectivity_diagnostic/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../Threat%20Vulnerability%20Management/Troubleshooting-Guide-%28TSG%29-CVE%E2%80%902023%E2%80%9049210-%E2%80%93-OpenSSL-Vulnerability-in-node%E2%80%90openssl-NPM-Package/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

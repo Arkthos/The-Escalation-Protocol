@@ -1,0 +1,96 @@
+/* ─────────────────────────────────────────────
+   READ THE DOCS  – CUSTOM SIDEBAR STYLES
+   Keeps the dark look you liked for levels 1-3
+   and forces bright text on all deeper levels.
+   ────────────────────────────────────────── */
+
+/* Search box / top banner */
+.wy-side-nav-search {
+  background: #2c3e50;
+  color: #fff;
+}
+
+/* LEVEL 1  (main categories) */
+.wy-menu-vertical li.toctree-l1 > a {
+  background: #34495e;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 8px 15px;
+}
+
+/* LEVEL 2 */
+.wy-menu-vertical li.toctree-l2 > a {
+  background: #3b5368;
+  color: #f0f0f0;
+  font-size: 0.80rem;
+  font-weight: 600;
+  padding-left: 25px;
+}
+
+/* LEVEL 3 */
+.wy-menu-vertical li.toctree-l3 > a {
+  background: #445d75;
+  color: #e0e0e0;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding-left: 35px;
+}
+
+/* ── FIX:  LEVEL 4 and deeper  (always bright text) ── */
+.wy-menu-vertical li.toctree-l3 ul,
+.wy-menu-vertical li.toctree-l4 ul {         /* sub-lists inherit dark bg */
+  background: #506b85 !important;
+}
+
+.wy-menu-vertical li.toctree-l4 > a,
+.wy-menu-vertical li.toctree-l5 > a,
+.wy-menu-vertical li.toctree-l6 > a {
+  background: #506b85 !important;
+  color: #ffffff !important;
+  font-size: 0.75rem;
+  font-weight: 400;
+  padding-left: 45px;        /* indent */
+}
+
+/* ── Hover / current page ── */
+.wy-menu-vertical a:hover,
+.wy-menu-vertical a:focus {
+  background: #1abc9c !important;
+  color: #000 !important;
+}
+
+.wy-menu-vertical .current > a {
+  background: #16a085 !important;
+  color: #fff !important;
+  font-weight: 700;
+}
+
+/* Expand / collapse icons */
+.wy-menu-vertical .toctree-expand {
+  color: #b0bec5;
+  font-size: 1rem;
+}
+
+/* Slight vertical spacing */
+.wy-menu-vertical li { margin: 3px 0; }
+/* === Fix: make every nested link (level 3 and deeper) readable === */
+.wy-menu-vertical li.toctree-l3 > a,
+.wy-menu-vertical li.toctree-l4 > a,
+.wy-menu-vertical li.toctree-l5 > a,
+.wy-menu-vertical li.toctree-l6 > a {
+  /* dark blue-gray background + white text */
+  background: #506b85 !important;
+  color: #ffffff !important;
+  font-size: 0.78rem;      /* keep size consistent              */
+  padding-left: 35px;      /* indent matches level-3 spacing     */
+}
+
+/* (optional) hover for those same links */
+.wy-menu-vertical li.toctree-l3 > a:hover,
+.wy-menu-vertical li.toctree-l4 > a:hover,
+.wy-menu-vertical li.toctree-l5 > a:hover,
+.wy-menu-vertical li.toctree-l6 > a:hover {
+  background: #1abc9c !important;
+  color: #000 !important;
+}

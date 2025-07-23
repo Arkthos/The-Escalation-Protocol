@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../../img/favicon.ico" />
+    <title>Ecs Connectivity Diagnostic - The Escalation Protocol</title>
+    <link rel="stylesheet" href="../../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../../stylesheets/nav.css" rel="stylesheet" />
+        <link href="../../../../stylesheets/layout.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Ecs Connectivity Diagnostic";
+        var mkdocs_page_input_path = "Defender for Endpoint/Endpoint Detection and Response/Microsoft Defender Core Service/ecs_connectivity_diagnostic.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../../.." class="icon icon-home"> The Escalation Protocol
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Defender for Endpoint</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Endpoint Detection and Response</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" >Alert Tunning</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Alert%20Tunning/Alert-Tuning-Quick%E2%80%90Start-Guide-%28Beginner-Edition%29/">Alert Tuning Quick‐Start Guide (Beginner Edition)</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Alert%20Tunning/Alert-Tuning-%E2%80%93-Comprehensive-Guide-%28Advanced-Edition%29/">Alert Tuning – Comprehensive Guide (Advanced Edition)</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Device Control</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Device%20Control/How-to-Configure-Device-Control-on-macOS%2C-Use-case-1.-Deny-write-access-to-all-USB-storage-except-for-specific-VendorID-and-ProductID-combinations-%28Jamf%29/">How To Configure Device Control On Macos, Use Case 1. Deny Write Access To All Usb Storage Except For Specific Vendorid And Productid Combinations (Jamf)</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../Device%20Control/Using-the-device-control-policy-sample-builder/">Using The Device Control Policy Sample Builder</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >ECS</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../ECS/How%20to%20Manually%20Test%20MDE%E2%80%99s%20ECS%20Networking/">How To Manually Test Mde’S Ecs Networking</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../mde_connectivity_channels/">Mde Connectivity Channels</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" >Microsoft Defender Core Service</a>
+    <ul class="current">
+                <li class="toctree-l3 current"><a class="reference internal current" href="#">Ecs Connectivity Diagnostic</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#summary">Summary</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#what-is-ecs">What is ECS?</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#problem">Problem</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#objective">Objective</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#prerequisites">Prerequisites</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#how-to-use-the-script">How to Use the Script</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#script">Script</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sample-output">Sample Output</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#troubleshooting-tips">Troubleshooting Tips</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#limitations">Limitations</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#next-steps">Next Steps</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#related-articles">Related Articles</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Tags</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Tags/Data-Driven%20Tags%20%E2%80%93%20Disabled%20and%20Isolated%20in%20Microsoft%20Defender%20for%20Endpoint/">Data Driven Tags – Disabled And Isolated In Microsoft Defender For Endpoint</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Threat Vulnerability Management</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../Threat%20Vulnerability%20Management/Troubleshooting-Guide-%28TSG%29-CVE%E2%80%902023%E2%80%9049210-%E2%80%93-OpenSSL-Vulnerability-in-node%E2%80%90openssl-NPM-Package/">Troubleshooting Guide (Tsg) Cve‐2023‐49210 – Openssl Vulnerability In Node‐Openssl Npm Package</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Support Tips and Tools</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Support%20Tips%20and%20Tools/Effective-Case-Notation-Good-practices-and-template/">Effective Case Notation Good Practices And Template</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Support%20Tips%20and%20Tools/How-to-Craft-an-Effective-Root-Cause-Analysis-%28RCA%29/">How To Craft An Effective Root Cause Analysis (Rca)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Derecho informático</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Derecho%20inform%C3%A1tico/Delitos-Inform%C3%A1ticos-en-Costa-Rica-Mapeo-Jur%C3%ADdico%E2%80%90T%C3%A9cnico-y-Controles-ATT%26CK/">Delitos Informáticos En Costa Rica Mapeo Jurídico‐Técnico Y Controles Att&Ck</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Derecho%20inform%C3%A1tico/Reflexi%C3%B3n%2C-Bienes-jur%C3%ADdicos-tutelados-en-una-eventual-legislaci%C3%B3n-de-IA-en-Costa-Rica/">Reflexión, Bienes Jurídicos Tutelados En Una Eventual Legislación De Ia En Costa Rica</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Day-to-Day Stuff</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../../Day-to-Day%20Stuff/birthday-reminders/">Birthday Reminders</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../..">The Escalation Protocol</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Defender for Endpoint</li>
+          <li class="breadcrumb-item">Endpoint Detection and Response</li>
+          <li class="breadcrumb-item">Microsoft Defender Core Service</li>
+      <li class="breadcrumb-item active">Ecs Connectivity Diagnostic</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="diagnosing-microsoft-defender-endpoint-ecs-connectivity-issues">Diagnosing Microsoft Defender Endpoint ECS Connectivity Issues</h1>
+<h2 id="summary">Summary</h2>
+<p>This article provides a PowerShell-based diagnostic approach to validate and capture telemetry for <strong>Microsoft Defender for Endpoint's ECS (Endpoint Configuration Service)</strong> connectivity. It includes a script that collects connection test results, logs, and a network capture to assist with troubleshooting ECS reachability issues, which are <strong>not currently covered by MDE Client Analyzer (MDECA)</strong>.</p>
+<hr />
+<h2 id="what-is-ecs">What is ECS?</h2>
+<p><strong>ECS (Endpoint Configuration Service)</strong> is a Microsoft cloud service used by Windows Defender and Microsoft Defender for Endpoint (MDE) clients to retrieve configuration data such as feature flags, diagnostic settings, and platform behavior instructions. ECS URLs are dynamically assigned and can vary based on region, tenant, or client configuration. <a href="https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-core-service-overview">Microsoft Defender Core Service Overview</a></p>
+<hr />
+<h2 id="problem">Problem</h2>
+<p>When investigating MDE client issues related to cloud configuration, ECS connectivity is a potential blind spot. <strong>MDE Client Analyzer (MDECA)</strong> currently <strong>does not validate ECS URL reachability</strong>, and failures in ECS communication can lead to:</p>
+<ul>
+<li>Missing or stale Defender configurations</li>
+<li>Delayed or absent feature rollouts</li>
+<li>Unexpected protection behavior</li>
+</ul>
+<hr />
+<h2 id="objective">Objective</h2>
+<p>Provide a diagnostic script that:</p>
+<ul>
+<li>Automatically discovers the ECS endpoint URL on the local device</li>
+<li>Validates basic connectivity (DNS, port, proxy)</li>
+<li>Attempts an HTTPS request to the ECS configuration URL</li>
+<li>Collects response headers and logs success/failure</li>
+<li>Captures network traffic to an <code>.etl</code> file</li>
+<li>Exports a full diagnostic report to the desktop</li>
+</ul>
+<hr />
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Windows PowerShell (run as Administrator)</li>
+<li>Defender must be installed and registered</li>
+<li>Internet access</li>
+<li>Permissions to write to <code>%TEMP%</code> and <code>%USERPROFILE%\Desktop</code></li>
+</ul>
+<hr />
+<h2 id="how-to-use-the-script">How to Use the Script</h2>
+<ol>
+<li>Open <strong>PowerShell as Administrator</strong></li>
+<li>Copy and paste the full script (below) into the console or save it as a <code>.ps1</code> file</li>
+<li>Run the script</li>
+<li>Wait for it to complete (usually under 1 minute)</li>
+<li>Locate two files on your desktop:</li>
+<li><code>Defender_ECS_Report_&lt;timestamp&gt;.txt</code> – contains diagnostics and logs</li>
+<li><code>Defender_ECS_Capture_&lt;timestamp&gt;.etl</code> – contains network traffic capture</li>
+</ol>
+<hr />
+<h2 id="script">Script</h2>
+<pre><code class="language-powershell"># --- Setup Paths and Timestamps ---
+$desktopPath = [Environment]::GetFolderPath(&quot;Desktop&quot;)
+$timestamp = Get-Date -Format &quot;yyyyMMdd_HHmmss&quot;
+$reportName = &quot;Defender_ECS_Report_$timestamp.txt&quot;
+$reportPath = Join-Path $desktopPath $reportName
+$traceName = &quot;Defender_ECS_Capture_$timestamp.etl&quot;
+$traceTempPath = Join-Path $env:TEMP $traceName
+$traceFinalPath = Join-Path $desktopPath $traceName
+
+# Clear/Create report file
+&quot;&quot; | Out-File -FilePath $reportPath -Encoding UTF8
+
+# --- Start Network Capture ---
+&quot;Starting network capture...&quot; | Tee-Object -FilePath $reportPath -Append
+netsh trace start capture=yes tracefile=&quot;$traceTempPath&quot; persistent=no maxsize=100 overwrite=yes | Out-String | Tee-Object -FilePath $reportPath -Append
+
+# --- Locate MpCmdRun.exe in Latest Defender Platform ---
+$basePath = &quot;C:\ProgramData\Microsoft\Windows Defender\Platform&quot;
+$latestDir = Get-ChildItem -Path $basePath -Directory |
+    Where-Object { $_.Name -match '^\d+\.\d+\.\d+\.\d+-\d+$' } |
+    Sort-Object Name -Descending |
+    Select-Object -First 1
+
+$mpCmdRunPath = Join-Path -Path $latestDir.FullName -ChildPath &quot;MpCmdRun.exe&quot;
+
+&quot;Latest Defender Platform: $($latestDir.Name)&quot; | Tee-Object -FilePath $reportPath -Append
+
+# --- Get ECS Base URL ---
+$ecsOutput = &amp; $mpCmdRunPath -DisplayECSConnection
+$ecsBaseUrl = ($ecsOutput | Where-Object { $_ -match '^ECS Url:' }) -replace '^ECS Url:\s*', ''
+
+# --- Build Full URL ---
+$queryString = '?CampPlatformVersion=6&amp;EngineMinorVersion=1&amp;EngineRing=2&amp;EngineVersion=25060&amp;IsBeta=0&amp;IsEmbedded=0&amp;IsEnterprise=1&amp;IsMsSense=1&amp;IsMsft=0&amp;IsServer=1&amp;IsSeville=1&amp;MoCampBuildRev=1641676800&amp;MoCampVersion=262162&amp;OsBuildMinNumber=2134&amp;OsBuildNumber=22621&amp;OsMajorMinorVersion=655360&amp;PlatformRing=2&amp;SignatureRing=5&amp;Engine_Ring=2'
+$finalUrl = &quot;$ecsBaseUrl&quot; + 'MicrosoftWindowsDefenderClient/1.0.0.0' + $queryString
+
+&quot;Final ECS URL: $finalUrl&quot; | Tee-Object -FilePath $reportPath -Append
+
+# --- DNS and Connectivity Tests ---
+try {
+    $ecsUri = [System.Uri]$finalUrl
+    $hostName = $ecsUri.Host
+
+    &quot;DNS Lookup for ${hostName}:&quot; | Tee-Object -FilePath $reportPath -Append
+    Resolve-DnsName $hostName -ErrorAction SilentlyContinue | Out-String | Tee-Object -FilePath $reportPath -Append
+
+    &quot;Port 443 Connectivity Test:&quot; | Tee-Object -FilePath $reportPath -Append
+    Test-NetConnection -ComputerName $hostName -Port 443 | Out-String | Tee-Object -FilePath $reportPath -Append
+} catch {
+    &quot;Could not resolve or test connectivity to $hostName&quot; | Tee-Object -FilePath $reportPath -Append
+}
+
+# --- Show System Proxy Settings ---
+&quot;System Proxy Configuration:&quot; | Tee-Object -FilePath $reportPath -Append
+(netsh winhttp show proxy) | Out-String | Tee-Object -FilePath $reportPath -Append
+
+# --- ECS Web Request ---
+try {
+    $response = Invoke-WebRequest -Uri $finalUrl -UseBasicParsing -ErrorAction Stop
+
+    &quot;Web Request Successful:&quot; | Tee-Object -FilePath $reportPath -Append
+    &quot;Status Code: $($response.StatusCode)&quot; | Tee-Object -FilePath $reportPath -Append
+    &quot;Response Headers:&quot; | Tee-Object -FilePath $reportPath -Append
+    $response.Headers | Out-String | Tee-Object -FilePath $reportPath -Append
+} catch {
+    &quot;Web Request Failed:&quot; | Tee-Object -FilePath $reportPath -Append
+    &quot;Error Message: $($_.Exception.Message)&quot; | Tee-Object -FilePath $reportPath -Append
+
+    if ($_.Exception.InnerException) {
+        &quot;Inner Exception: $($_.Exception.InnerException.Message)&quot; | Tee-Object -FilePath $reportPath -Append
+    }
+
+    if ($_.Exception -is [System.Net.WebException]) {
+        $webEx = $_.Exception
+        if ($webEx.Response) {
+            $reader = New-Object System.IO.StreamReader($webEx.Response.GetResponseStream())
+            $body = $reader.ReadToEnd()
+            &quot;Server Response:&quot; | Tee-Object -FilePath $reportPath -Append
+            $body | Tee-Object -FilePath $reportPath -Append
+        }
+    }
+}
+
+# --- Stop Network Capture ---
+&quot;Stopping network capture...&quot; | Tee-Object -FilePath $reportPath -Append
+netsh trace stop | Out-String | Tee-Object -FilePath $reportPath -Append
+Start-Sleep -Seconds 2
+
+# --- Move ETL File to Desktop ---
+if (Test-Path $traceTempPath) {
+    Move-Item -Path $traceTempPath -Destination $traceFinalPath -Force
+    &quot;ETL file saved to: $traceFinalPath&quot; | Tee-Object -FilePath $reportPath -Append
+} else {
+    &quot;Trace file not found in temp location.&quot; | Tee-Object -FilePath $reportPath -Append
+}
+
+# --- Final Report Location ---
+&quot;Diagnostic report saved to: $reportPath&quot; | Tee-Object -FilePath $reportPath -Append
+
+# --- Open ECS URL in Default Browser ---
+Start-Process $finalUrl
+</code></pre>
+<hr />
+<h2 id="sample-output">Sample Output</h2>
+<h3 id="desktop-files">Desktop Files:</h3>
+<ul>
+<li><code>Defender_ECS_Report_20250707_114122.txt</code></li>
+<li><code>Defender_ECS_Capture_20250707_114122.etl</code></li>
+</ul>
+<h3 id="ecs-report-excerpt">ECS Report (Excerpt):</h3>
+<pre><code>Latest Defender Platform: 4.18.25050.5-0
+Final ECS URL: https://mdav.us.endpoint.security.microsoft.com/ecs/config/v1/MicrosoftWindowsDefenderClient/1.0.0.0?...
+DNS Lookup for mdav.us.endpoint.security.microsoft.com:
+...
+
+Port 443 Connectivity Test:
+TcpTestSucceeded : True
+
+Web Request Successful:
+Status Code: 200
+Response Headers:
+...
+</code></pre>
+<hr />
+<h2 id="troubleshooting-tips">Troubleshooting Tips</h2>
+<ul>
+<li><strong>DNS Failure</strong>: Check internal DNS rules or host resolution for the ECS domain.</li>
+<li><strong>Port Blocked</strong>: Use <code>Test-NetConnection</code> output to identify firewall or network issues.</li>
+<li><strong>Proxy Config</strong>: Ensure the proxy allows outbound HTTPS access to ECS domains.</li>
+<li><strong>Certificate/Privacy Errors</strong>: The script captures detailed exceptions including SSL/TLS failures.</li>
+<li><strong>Timeouts</strong>: Check latency or packet loss in the <code>.etl</code> capture using Network Monitor or Wireshark.</li>
+</ul>
+<hr />
+<h2 id="limitations">Limitations</h2>
+<ul>
+<li>Script must be run <strong>with administrative privileges</strong></li>
+<li><code>.etl</code> files require parsing with tools like Microsoft Message Analyzer or Wireshark</li>
+<li>Script does not attempt retries or alternate ECS endpoints</li>
+</ul>
+<hr />
+<h2 id="next-steps">Next Steps</h2>
+<p>If the script shows failures or abnormal output:</p>
+<ol>
+<li>Review proxy/firewall configurations for ECS domains</li>
+<li>Upload the <code>.etl</code> file to a secure analysis tool</li>
+<li>Provide the <code>.txt</code> report to Microsoft Support for further diagnosis</li>
+<li>Refer to ECS documentation for required domains and IP ranges</li>
+</ol>
+<hr />
+<h2 id="related-articles">Related Articles</h2>
+<ul>
+<li><code>[MDECA: What it checks and what it misses]</code></li>
+<li><code>[Troubleshooting MDE connectivity issues]</code></li>
+<li><code>[Understanding ECS traffic flow]</code></li>
+</ul>
+<hr />
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../mde_connectivity_channels/" class="btn btn-neutral float-left" title="Mde Connectivity Channels"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Tags/Data-Driven%20Tags%20%E2%80%93%20Disabled%20and%20Isolated%20in%20Microsoft%20Defender%20for%20Endpoint/" class="btn btn-neutral float-right" title="Data Driven Tags – Disabled And Isolated In Microsoft Defender For Endpoint">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../mde_connectivity_channels/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../Tags/Data-Driven%20Tags%20%E2%80%93%20Disabled%20and%20Isolated%20in%20Microsoft%20Defender%20for%20Endpoint/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../../..";</script>
+    <script src="../../../../js/theme_extra.js"></script>
+    <script src="../../../../js/theme.js"></script>
+      <script src="../../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

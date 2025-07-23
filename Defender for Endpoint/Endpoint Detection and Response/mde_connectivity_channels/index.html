@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Mde Connectivity Channels - The Escalation Protocol</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../../../stylesheets/nav.css" rel="stylesheet" />
+        <link href="../../../stylesheets/layout.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Mde Connectivity Channels";
+        var mkdocs_page_input_path = "Defender for Endpoint/Endpoint Detection and Response/mde_connectivity_channels.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> The Escalation Protocol
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Defender for Endpoint</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" >Endpoint Detection and Response</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" >Alert Tunning</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../Alert%20Tunning/Alert-Tuning-Quick%E2%80%90Start-Guide-%28Beginner-Edition%29/">Alert Tuning Quick‐Start Guide (Beginner Edition)</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../Alert%20Tunning/Alert-Tuning-%E2%80%93-Comprehensive-Guide-%28Advanced-Edition%29/">Alert Tuning – Comprehensive Guide (Advanced Edition)</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Device Control</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../Device%20Control/How-to-Configure-Device-Control-on-macOS%2C-Use-case-1.-Deny-write-access-to-all-USB-storage-except-for-specific-VendorID-and-ProductID-combinations-%28Jamf%29/">How To Configure Device Control On Macos, Use Case 1. Deny Write Access To All Usb Storage Except For Specific Vendorid And Productid Combinations (Jamf)</a>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../Device%20Control/Using-the-device-control-policy-sample-builder/">Using The Device Control Policy Sample Builder</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >ECS</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../ECS/How%20to%20Manually%20Test%20MDE%E2%80%99s%20ECS%20Networking/">How To Manually Test Mde’S Ecs Networking</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Mde Connectivity Channels</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#cnc-channel-command-and-control">🧐 CNC Channel (Command and Control)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cyber-channel-telemetry-and-reporting">📡 Cyber Channel (Telemetry and Reporting)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#maps-channel-cloud-based-protection">🗺️ Maps Channel (Cloud-Based Protection)</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#standard-vs-streamlined-connectivity">🔍 Standard vs Streamlined Connectivity</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#standard-connectivity">Standard Connectivity:</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#streamlined-connectivity">Streamlined Connectivity:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#url-to-feature-mapping-table">📂 URL-to-Feature Mapping Table</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#regional-considerations">🌐 Regional Considerations</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#final-thoughts">🚧 Final Thoughts</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Microsoft Defender Core Service</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../Microsoft%20Defender%20Core%20Service/ecs_connectivity_diagnostic/">Ecs Connectivity Diagnostic</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Tags</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../Tags/Data-Driven%20Tags%20%E2%80%93%20Disabled%20and%20Isolated%20in%20Microsoft%20Defender%20for%20Endpoint/">Data Driven Tags – Disabled And Isolated In Microsoft Defender For Endpoint</a>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" >Threat Vulnerability Management</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../Threat%20Vulnerability%20Management/Troubleshooting-Guide-%28TSG%29-CVE%E2%80%902023%E2%80%9049210-%E2%80%93-OpenSSL-Vulnerability-in-node%E2%80%90openssl-NPM-Package/">Troubleshooting Guide (Tsg) Cve‐2023‐49210 – Openssl Vulnerability In Node‐Openssl Npm Package</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Support Tips and Tools</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Support%20Tips%20and%20Tools/Effective-Case-Notation-Good-practices-and-template/">Effective Case Notation Good Practices And Template</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Support%20Tips%20and%20Tools/How-to-Craft-an-Effective-Root-Cause-Analysis-%28RCA%29/">How To Craft An Effective Root Cause Analysis (Rca)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Derecho informático</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Derecho%20inform%C3%A1tico/Delitos-Inform%C3%A1ticos-en-Costa-Rica-Mapeo-Jur%C3%ADdico%E2%80%90T%C3%A9cnico-y-Controles-ATT%26CK/">Delitos Informáticos En Costa Rica Mapeo Jurídico‐Técnico Y Controles Att&Ck</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Derecho%20inform%C3%A1tico/Reflexi%C3%B3n%2C-Bienes-jur%C3%ADdicos-tutelados-en-una-eventual-legislaci%C3%B3n-de-IA-en-Costa-Rica/">Reflexión, Bienes Jurídicos Tutelados En Una Eventual Legislación De Ia En Costa Rica</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Day-to-Day Stuff</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../../Day-to-Day%20Stuff/birthday-reminders/">Birthday Reminders</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">The Escalation Protocol</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Defender for Endpoint</li>
+          <li class="breadcrumb-item">Endpoint Detection and Response</li>
+      <li class="breadcrumb-item active">Mde Connectivity Channels</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="understanding-microsoft-defender-for-endpoint-connectivity-channels-what-they-do-and-why-they-matter">Understanding Microsoft Defender for Endpoint Connectivity Channels: What They Do and Why They Matter</h1>
+<p>When deploying Microsoft Defender for Endpoint (MDE), organizations are often told which endpoints and services must be accessible. However, what’s frequently missing is <strong>why</strong> these channels exist and <strong>what functionality breaks</strong> if they're blocked. This article explains each core connectivity channel, provides real-world examples, and clarifies the difference between standard and streamlined connectivity.</p>
+<p>For official documentation on configuring your environment, including connectivity requirements, visit:
+<strong><a href="https://learn.microsoft.com/en-us/defender-endpoint/configure-environment">Microsoft Learn - Configure Microsoft Defender for Endpoint in your environment</a></strong></p>
+<hr />
+<h2 id="cnc-channel-command-and-control">🧐 CNC Channel (Command and Control)</h2>
+<p><strong>Purpose:</strong> Provides centralized control from the Microsoft Defender cloud to the endpoint client (Sense).</p>
+<p><strong>Payloads and Traffic:</strong></p>
+<ul>
+<li>Heartbeat signals (WinATP traffic)</li>
+<li>Sensor and OS version info</li>
+<li>Remote command dispatching:</li>
+<li>Isolate device</li>
+<li>Restrict app execution</li>
+<li>Run antivirus scan</li>
+<li>Collect investigation package</li>
+<li>Start Live Response session</li>
+<li>Trigger automated investigation</li>
+<li>Configure troubleshooting mode</li>
+<li>Offboarding commands</li>
+</ul>
+<p><strong>Why It Matters:</strong>
+Blocking CNC traffic prevents remote security actions. For instance, you wouldn’t be able to isolate a compromised device during an incident. Live Response sessions and forensic data collection would fail.</p>
+<p><strong>Example from ECS Configuration:</strong> The ECS (Experimentation and Configuration Service) sends configuration payloads via CNC to enforce settings such as enabling a feature or toggling troubleshooting mode. URLs like <code>*.ecs.office.com</code> must be reachable to ensure consistent policy enforcement. ECS ensures product health and supports controlled rollouts without impacting all users at once.</p>
+<hr />
+<h2 id="cyber-channel-telemetry-and-reporting">📡 Cyber Channel (Telemetry and Reporting)</h2>
+<p><strong>Purpose:</strong> Sends telemetry data and security event logs from the device to Microsoft Defender’s cloud backend.</p>
+<p><strong>Payloads and Events:</strong></p>
+<ul>
+<li>Device and component versions (Defender AV, MOCAMP, engine, definitions)</li>
+<li>Response action results (e.g., AV scan outcome, package collection success)</li>
+<li>Raw telemetry: <code>DeviceInfoEvents</code>, <code>RegistryEvents</code>, <code>NetworkEvents</code>, <code>FileEvents</code>, etc.</li>
+<li>Alert and incident data</li>
+<li>Timeline event population</li>
+<li>Security recommendations</li>
+<li>Software inventories and vulnerability insights</li>
+<li>Tags pushed through registry keys</li>
+</ul>
+<p><strong>Why It Matters:</strong>
+Without telemetry, the device becomes invisible to SecOps teams. No alerts, incident timelines, or vulnerability reports will show up in the portal. Hunting and correlation tools lose value.</p>
+<p><strong>Example:</strong> A blocked Cyber Channel would prevent reporting of discovered vulnerabilities and KB patch statuses, impacting compliance visibility.</p>
+<hr />
+<h2 id="maps-channel-cloud-based-protection">🗺️ Maps Channel (Cloud-Based Protection)</h2>
+<p><strong>Purpose:</strong> Supports Microsoft Defender Antivirus and Endpoint Detection and Response (EDR) cloud functionalities.</p>
+<p><strong>Key Services:</strong></p>
+<ul>
+<li>Real-time cloud lookups for suspicious files</li>
+<li>Custom indicators (hashes, IPs, URLs)</li>
+<li>Network protection enforcement</li>
+<li>Web content filtering</li>
+<li>EDR block mode</li>
+<li>Tamper Protection toggled via MDE portal</li>
+</ul>
+<p><strong>Why It Matters:</strong>
+Cloud-delivered protection is essential for detecting emerging threats and enforcing org-specific threat indicators. Without it, devices fall back to outdated, local-only detection.</p>
+<p><strong>Example:</strong> If <code>*.wdcp.microsoft.com</code> or <code>*.wd.microsoft.com</code> is blocked, the endpoint cannot perform real-time cloud lookups, severely degrading AV performance.</p>
+<hr />
+<h2 id="standard-vs-streamlined-connectivity">🔍 Standard vs Streamlined Connectivity</h2>
+<p>Microsoft supports two connectivity models:</p>
+<h3 id="standard-connectivity">Standard Connectivity:</h3>
+<ul>
+<li>Requires access to a broader range of domains and URLs.</li>
+<li>Granular separation between features, updates, and telemetry paths.</li>
+<li>Full-featured but complex to configure in restricted environments.</li>
+</ul>
+<h3 id="streamlined-connectivity">Streamlined Connectivity:</h3>
+<ul>
+<li>Introduced for simpler firewall/proxy configurations.</li>
+<li>Consolidates MDE services under fewer FQDNs like:</li>
+<li><code>*.endpoint.security.microsoft.com</code></li>
+<li><code>*.events.data.microsoft.com</code></li>
+<li><code>*.ecs.office.com</code></li>
+<li>Offers nearly the same capabilities with reduced overhead.</li>
+</ul>
+<p><strong>From Attached Files:</strong> The spreadsheet <code>mde-streamlined-urls-commercial.xlsx</code> shows that many URLs for sensor telemetry, Live Response, and feature configuration are unified under the streamlined model, reducing friction for security teams.</p>
+<hr />
+<h2 id="url-to-feature-mapping-table">📂 URL-to-Feature Mapping Table</h2>
+<table>
+<thead>
+<tr>
+<th>Feature / Capability</th>
+<th>Channel</th>
+<th>Example Domains (FQDNs)</th>
+<th>Streamlined Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Device Isolation / Response</td>
+<td>CNC</td>
+<td><code>*.endpoint.security.microsoft.com</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>ECS Config &amp; Troubleshooting</td>
+<td>CNC</td>
+<td><code>*.ecs.office.com</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Sensor and OS Version Reports</td>
+<td>CNC/Cyber</td>
+<td><code>*.events.data.microsoft.com</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Telemetry Events &amp; Alerts</td>
+<td>Cyber</td>
+<td><code>*.events.data.microsoft.com</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Defender AV Cloud Protection</td>
+<td>Maps</td>
+<td><code>*.wdcp.microsoft.com</code>, <code>*.wd.microsoft.com</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Web Content Filtering</td>
+<td>Maps</td>
+<td><code>*.microsoft.com</code>, <code>*.cloudfilter.net</code> (region-dependent)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Vulnerability Management</td>
+<td>Cyber</td>
+<td><code>*.endpoint.security.microsoft.com</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Live Response / Package Upload</td>
+<td>CNC/Cyber</td>
+<td><code>*.endpoint.security.microsoft.com</code>, <code>*.events.data.microsoft.com</code></td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="regional-considerations">🌐 Regional Considerations</h2>
+<p>MDE connectivity varies slightly based on data residency requirements. From the uploaded spreadsheets:</p>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>Example FQDNs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Commercial</td>
+<td><code>*.endpoint.security.microsoft.com</code>, <code>*.ecs.office.com</code></td>
+</tr>
+<tr>
+<td>GCC High &amp; DoD</td>
+<td><code>*.endpoint.security.microsoft.us</code>, <code>*.config.ecs.dod.teams.microsoft.us</code></td>
+</tr>
+<tr>
+<td>GCC Moderate</td>
+<td><code>*.gccmod.ecs.office.com</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ensure endpoints in regulated environments like the US Government use the region-specific FQDNs listed in the <a href="https://learn.microsoft.com/en-us/defender-endpoint/configure-environment">official documentation</a>.</p>
+<hr />
+<h2 id="final-thoughts">🚧 Final Thoughts</h2>
+<p>Proper configuration of MDE connectivity is not just a best practice — it’s a <strong>requirement</strong> for effective detection, response, and protection. Every blocked call reduces visibility or disables key functionality. ECS and streamlined connectivity models help simplify management while ensuring full-feature coverage.</p>
+<p>Ensure the right domains are always reachable, monitor connectivity health, and use logs (like heartbeat or command telemetry) to validate end-to-end operation.</p>
+<p>For the most current list of required endpoints and their functions, always refer to:
+<strong><a href="https://learn.microsoft.com/en-us/defender-endpoint/configure-environment">Microsoft Learn - Configure Microsoft Defender for Endpoint in your environment</a></strong></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../ECS/How%20to%20Manually%20Test%20MDE%E2%80%99s%20ECS%20Networking/" class="btn btn-neutral float-left" title="How To Manually Test Mde’S Ecs Networking"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Microsoft%20Defender%20Core%20Service/ecs_connectivity_diagnostic/" class="btn btn-neutral float-right" title="Ecs Connectivity Diagnostic">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../ECS/How%20to%20Manually%20Test%20MDE%E2%80%99s%20ECS%20Networking/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Microsoft%20Defender%20Core%20Service/ecs_connectivity_diagnostic/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../../..";</script>
+    <script src="../../../js/theme_extra.js"></script>
+    <script src="../../../js/theme.js"></script>
+      <script src="../../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
