@@ -23,6 +23,9 @@ nav:
         : Defender for Endpoint/Endpoint Detection and Response/Device Control/How-to-Configure-Device-Control-on-macOS,-Use-case-1.-Deny-write-access-to-all-USB-storage-except-for-specific-VendorID-and-ProductID-combinations-(Jamf).md
       - Using The Device Control Policy Sample Builder: Defender for Endpoint/Endpoint
           Detection and Response/Device Control/Using-the-device-control-policy-sample-builder.md
+    - ECS:
+      - How To Manually Test Mde’S Ecs Networking: Defender for Endpoint/Endpoint
+          Detection and Response/ECS/How to Manually Test MDE’s ECS Networking.md
     - Mde Connectivity Channels: Defender for Endpoint/Endpoint Detection and Response/mde_connectivity_channels.md
     - Microsoft Defender Core Service:
       - Ecs Connectivity Diagnostic: Defender for Endpoint/Endpoint Detection and
